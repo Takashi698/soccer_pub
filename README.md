@@ -28,9 +28,10 @@ https://docs.google.com/spreadsheets/d/14LryNe5jRJ_aXTc7gwYj9obVwUx2zzTddIJnwSfI
 https://docs.google.com/spreadsheets/d/1_d_FzBvuZ7axLwPxXkG3uJficT9CjFV9zp3jkyFCrfE/edit?usp=sharing
 
 **画面遷移図**
+https://docs.google.com/spreadsheets/d/1fgMH9UFWfmA3IzF2MN4MsLgYncDRQEqdJdOaRRaVAJM/edit?usp=sharing
 
 **ワイヤーフレーム**
-
+https://docs.google.com/spreadsheets/d/1FkJdZkb0pOO_bFkr_4-wOa1713wLZ8-hFA6XVzkpO-M/edit?usp=sharing
 
 **Gem**
 * kaminari
