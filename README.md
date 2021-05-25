@@ -15,10 +15,10 @@ ruby2.6.5  rails 5.2.5
 * gameのお気に入り機能
 * gameへのコメント機能(投稿、画像)
 * gameの検索機能
-* ユーザー同士のDM機能
+* メッセージ機能
 * ゲストログイン機能
 * カレンダー機能
-* フォロー機能
+
 
 **カタログ**  
 https://docs.google.com/spreadsheets/d/14LryNe5jRJ_aXTc7gwYj9obVwUx2zzTddIJnwSfIuZ8/edit?usp=sharing
@@ -39,3 +39,8 @@ https://docs.google.com/spreadsheets/d/1FkJdZkb0pOO_bFkr_4-wOa1713wLZ8-hFA6XVzkp
 * mini_magick
 * carrierwave
 * dotenv_rails
+* devise-i18n
+* simple_calendar
+* bcrypt
+* faker
+* rails_admin
