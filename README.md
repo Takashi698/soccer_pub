@@ -49,8 +49,6 @@ https://docs.google.com/spreadsheets/d/1FkJdZkb0pOO_bFkr_4-wOa1713wLZ8-hFA6XVzkp
 * mini_magick
 * carrierwave
 * dotenv_rails
-* devise-i18n
-* simple_calendar
 * bcrypt
 * faker
 * rails_admin
