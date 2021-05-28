@@ -39,7 +39,7 @@ $ rails db:create && rails db:migrate
 $ rails s
 ````
 
-## カタログ  
+## カタログ設計  
 https://docs.google.com/spreadsheets/d/14LryNe5jRJ_aXTc7gwYj9obVwUx2zzTddIJnwSfIuZ8/edit?usp=sharing
 
 ## テーブル定義・ER図
