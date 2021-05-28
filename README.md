@@ -37,19 +37,11 @@ https://docs.google.com/spreadsheets/d/14LryNe5jRJ_aXTc7gwYj9obVwUx2zzTddIJnwSfI
 **テーブル定義・ER図**
 https://docs.google.com/spreadsheets/d/1_d_FzBvuZ7axLwPxXkG3uJficT9CjFV9zp3jkyFCrfE/edit?usp=sharing
 
-**画面遷移図**
-https://docs.google.com/spreadsheets/d/1fgMH9UFWfmA3IzF2MN4MsLgYncDRQEqdJdOaRRaVAJM/edit?usp=sharing
-
 **ワイヤーフレーム**
 https://docs.google.com/spreadsheets/d/1FkJdZkb0pOO_bFkr_4-wOa1713wLZ8-hFA6XVzkpO-M/edit?usp=sharing
 
-**Gem**
-* kaminari
-* devise
-* ransack
-* mini_magick
-* carrierwave
-* dotenv_rails
-* bcrypt
-* faker
-* rails_admin
+**ER図**
+<img src="./public/images/ERmapping.png" alt="ER図" width='650px'>  
+
+**画面遷移図**
+<img src="./public/images/STDiagram.png" alt="画面遷移図" width='650px'>  
