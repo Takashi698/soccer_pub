@@ -31,11 +31,13 @@ SoccerPubはそんな熱のあるサポーター達にとって、「ここに�
 * Heroku
 
 ## 実行手順
+````
 $ git clone https://github.com/Takashi698/soccer_pub.git
 $ cd soccer_pub
 $ bundle install
 $ rails db:create && rails db:migrate
 $ rails s
+````
 
 ## カタログ  
 https://docs.google.com/spreadsheets/d/14LryNe5jRJ_aXTc7gwYj9obVwUx2zzTddIJnwSfIuZ8/edit?usp=sharing
