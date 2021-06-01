@@ -5,6 +5,8 @@ class CreateGames < ActiveRecord::Migration[5.2]
       t.string :place
       t.datetime :match_at
       t.references :user, foreign_key: true
+
+      t.timestamps
     end
   end
 end

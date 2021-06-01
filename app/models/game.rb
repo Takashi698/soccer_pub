@@ -1,5 +1,4 @@
 class Game < ApplicationRecord
-  belongs_to :users
-  mount_uploader :image, ImageUploader
+  belongs_to :user
   validates :content, presence: true, length: {maximum: 1000}
 end

@@ -1,6 +1,6 @@
 class GamesController < ApplicationController
-  before_action :set_game, only: %i(show edit update destroy)
   before_action :authenticate_user!, only: %i(show edit update destroy)
+  before_action :set_game, only: %i(show edit update destroy)
 
   def index
     @games = Game.all
@@ -11,7 +11,11 @@ class GamesController < ApplicationController
   end
 
   def create
-    @game = Game.new(game_params)
+    @game = current_user.games.build(permitted_parameter)
+    # @game = Game.new(permitted_parameter)
+    # @game.user_id = current_user.id
+
+    # binding.pry
     if @game.save
       redirect_to games_path, notice: '作成しました'
     else
@@ -26,7 +30,7 @@ class GamesController < ApplicationController
   end
 
   def update
-    if @game.update(game_params)
+    if @game.update(permitted_parameter)
       redirect_to games_path, notice: '編集しました'
     else
       render :new
@@ -38,10 +42,10 @@ class GamesController < ApplicationController
     redirect_to games_path, notice: '削除しました'
   end
   private
-  def game_params
-    params.require(:game).permit(:content)
-  end
   def set_game
     @game = Game.find(params[:id])
+  end
+  def permitted_parameter
+    params.require(:game).permit(:content)
   end
 end
