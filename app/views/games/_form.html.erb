@@ -1,0 +1,19 @@
+<% if @game.errors.any? %>
+  <ul>
+    <% @game.errors.full_messages.each do |msg| %>
+    <li>
+      <%= msg %>
+    </li>
+    <% end %>
+  </ul>
+<% end %>
+<%= form_with(model:@game, local: true) do |form| %>
+  <div>
+    <%= form.label :content, 'コンテンツ' %>
+    <%= form.text_field :content %>
+  </div>
+  <div>
+    <%= form.submit 'Create' %>
+  </div>
+<% end %>
+<%= link_to '一覧に戻る', games_path %> 
