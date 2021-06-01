@@ -39,7 +39,7 @@ class GamesController < ApplicationController
   end
   private
   def game_params
-    params.require(:game).permit(:content, :image)
+    params.require(:game).permit(:content)
   end
   def set_game
     @game = Game.find(params[:id])
