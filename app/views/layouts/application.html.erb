@@ -11,11 +11,12 @@
 
   <body>
   <% if user_signed_in? %>
-    <%= link_to "gameの新規作成", games_path %>
+    <%= link_to 'トップページ', games_path ,class:"btn btn-outline-primary" %>
+    <%= link_to 'マイページ', user_path(current_user.id) ,class:"btn btn-outline-primary" %>
     <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
   <% else %>
-    <%= link_to "新規登録", new_user_registration_path %>
-    <%= link_to "ログイン", new_user_session_path %>
+    <%= link_to 'サインアップ', new_user_registration_path,class:"btn btn-outline-primary" %>
+    <%= link_to "ログイン", new_user_session_path,class:"btn btn-outline-primary" %>
   <% end %>
   <% if notice %>
     <p class="alert alert-notice"><%= notice %></p>
@@ -23,6 +24,8 @@
   <% if alert %>
     <p class="alert alert-error"><%= alert %></p>
   <% end %>
+  
+  <div class="container-fluid py-4 <%= devise_controller? ? 'mw-md' : 'mw-xl' %>">
   <%= yield %>
   </body>
 </html>
