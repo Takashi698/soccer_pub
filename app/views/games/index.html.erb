@@ -1,0 +1,17 @@
+<h3>game一覧</h3>
+
+<table>
+  <tr>
+    <th>内容</th>
+  </tr>
+  <tr>
+    <%= link_to 'game新規作成', new_game_path, class:'btn btn-primary' %> 
+    <% @games.each do |game| %>
+      <td><%= game.content %></td>
+      <td><%= link_to '詳細', game_path(game.id) %></td>
+      <td><%= link_to '編集', edit_game_path(game.id) %></td>
+      <td><%= link_to '削除', game_path(game.id), method: :delete, data: {confirm: '削除してよろしいですか？'} %></td>
+  </tr>
+  <% end %>
+</table>
+
