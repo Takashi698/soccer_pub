@@ -13,7 +13,7 @@
   <% if user_signed_in? %>
     <%= link_to 'トップページ', games_path ,class:"btn btn-outline-primary" %>
     <%= link_to 'マイページ', user_path(current_user.id) ,class:"btn btn-outline-primary" %>
-    <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+    <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"btn btn-outline-primary"%>
   <% else %>
     <%= link_to 'サインアップ', new_user_registration_path,class:"btn btn-outline-primary" %>
     <%= link_to "ログイン", new_user_session_path,class:"btn btn-outline-primary" %>

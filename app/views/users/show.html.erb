@@ -1,6 +1,6 @@
 <h3>マイページ</h3>
+<p>image<%= @user.image %></p>
 <p>name:<%= @user.name %></p>
 <p>email:<%= @user.email %></p>
-<p>image<%= @user.image %></p>
 <%= link_to 'マイページ編集', edit_user_registration_path, class:'btn btn-success' %>
 <%= link_to 'game一覧へ', games_path, class:'btn btn-primary' %> 
