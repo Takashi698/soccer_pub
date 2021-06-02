@@ -5,6 +5,13 @@ class ApplicationController < ActionController::Base
     user_path(resource.id)
   end
 
+  def check_guest
+    email = resource&.email || params[:user][:email].downcase
+    if email == 'guest_user@example.com'
+      redirect_to root_path, alert: 'ゲストユーザーは編集・削除できません！'
+    end
+  end
+
   before_action :configure_permitted_parameters, if: :devise_controller?
   
   protected

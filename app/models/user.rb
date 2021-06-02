@@ -5,8 +5,14 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
 
-  has_many :games
+  has_many :games, dependent: :destroy
   validates :name, presence: true, length: {maximum: 100}
   mount_uploader :image, ImageUploader
+
+  def self.guest_info
+    find_or_create_by(name: 'guest_user', email: 'guest_user@example.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+    end
+  end
 
 end
