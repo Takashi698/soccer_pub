@@ -18,7 +18,12 @@
       <td><%= link_to '編集', edit_game_path(game.id) %></td>
       <td><%= link_to '削除', game_path(game.id), method: :delete, data: {confirm: '削除してよろしいですか？'} %></td>
   </tr>
+  <div class = "balloon1">
+    <%= link_to (game.content), game_path(game.id) %><br>
+  </div>
   <% end %>
   </table>
-  <%= paginate @games %>
+  <div class = 'pagination' >
+      <%= paginate @games %>
+</div> 
 

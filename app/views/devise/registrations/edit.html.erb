@@ -4,7 +4,7 @@
   <%= bootstrap_devise_error_messages! %>
 
   <div class="field">
-    <%= image_tag resource.image.url if resource.image.present? %><br/>
+    <%= image_tag resource.image.url, class: 'rounded-circle' if resource.image.present? %><br/>
     <%= f.label :image %><br />
     <%= f.file_field :image %>
   </div>
