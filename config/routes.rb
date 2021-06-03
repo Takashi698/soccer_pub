@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root "games#index"
-  resources :games
+  resources :games do
+    resources :comments
+  end
 
   devise_for :users, controllers: {
     registrations: 'users/registrations',

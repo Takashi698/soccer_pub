@@ -10,4 +10,17 @@
   <%= link_to '削除', game_path(@game.id), method: :delete, class: 'first_delete', data: {confirm: "投稿を削除してもよろしいでしょうか？"} %>
 <% end %>
 
+<div class="container">
+  <p id="notice"><%= notice %></p>
+  </div>
+  <p>コメント一覧</p>
+  <!-- このcomments_areaというHTMLのidを取得して、そのdivの部分だけを更新する -->
+  <div id="comments_area">
+    <!-- 投稿されたコメント一覧をブログの詳細ページに表示するためのrender -->
+    <%= render partial: 'comments/index', locals: { comments: @comments, game: @game } %>
+  </div>
+  <!-- コメント入力欄をブログの詳細ページに表示するためのrender -->
+  <%= render partial: 'comments/form', locals: { comment: @comment, game: @game } %>
+</div>
+
 <%= link_to '一覧に戻る', games_path %>
