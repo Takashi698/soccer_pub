@@ -3,7 +3,7 @@
 <p>name:<%= @user.name %></p>
 <p>email:<%= @user.email %></p>
 
-  <%= render 'stats' %>
+  <%= render 'stats', user: @user %>
   <%= render 'follow_form', user: @user unless current_user == @user %>
   <%= link_to 'マイページ編集', edit_user_registration_path, class:'btn btn-success' %>
   <%= link_to 'お気に入り一覧', users_favorites_path, class:'btn btn-success' %>
