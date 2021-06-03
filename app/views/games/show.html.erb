@@ -1,8 +1,15 @@
 <p> 
   <%= @game.user.name %>のgameルーム
 </p>
+
 <p> 
-  <%= @game.content %>
+  試合内容 : <%= @game.content %>
+</p>
+<p> 
+  場所 : <%= @game.place %>
+</p>
+<p> 
+  日時 : <%= @game.match_at %>
 </p>
 
 <% if current_user == @game.user %>

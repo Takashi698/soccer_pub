@@ -4,4 +4,7 @@ class Game < ApplicationRecord
   # has_many :teams, dependent: :destroy
   has_many :comments, dependent: :destroy
   validates :content, presence: true, length: {maximum: 1000}
+  validates :place, presence: true
+  validates :match_at, presence: true
+
 end
