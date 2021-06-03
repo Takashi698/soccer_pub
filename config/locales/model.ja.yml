@@ -1,0 +1,19 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+    attributes:
+      game:
+        content: 試合内容
+        place: 場所
+        match_at: 日時
+      team:
+        name: チーム名
+        image: エンブレム
+        description: 説明
+        address: 場所
+      upshot:
+        team_a_point: 対戦相手Aの得点
+        team_b_point: 対戦相手Bの得点
+      user:
+        image: 画像

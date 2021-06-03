@@ -49,6 +49,6 @@ class GamesController < ApplicationController
     @game = Game.find(params[:id])
   end
   def permitted_parameter
-    params.require(:game).permit(:content)
+    params.require(:game).permit(:content, :place, :match_at)
   end
 end

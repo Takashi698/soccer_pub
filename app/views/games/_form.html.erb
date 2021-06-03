@@ -9,8 +9,16 @@
 <% end %>
 <%= form_with(model:@game, local: true) do |form| %>
   <div>
-    <%= form.label :content, 'コンテンツ' %>
-    <%= form.text_field :content %>
+    <%= form.label :content, '試合内容' %>
+    <%= form.text_area :content %>
+  </div>
+  <div>
+    <%= form.label :place, '試合場所' %>
+    <%= form.text_field :place %>
+  </div>
+  <div>
+    <%= form.label :match_at, '日時' %>
+    <%= form.datetime_field :match_at %>
   </div>
   <div>
     <%= form.submit 'Create' %>
