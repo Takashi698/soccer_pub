@@ -1,11 +1,12 @@
 class GamesController < ApplicationController
   before_action :authenticate_user!, only: %i(show edit update destroy)
   before_action :set_game, only: %i(show edit update destroy)
+  PER = 5
 
   def index
-    @games = Game.all
+    @games = Game.page(params[:page]).per(PER)
     @q = Game.ransack(params[:q])
-    @games = @q.result(distinct: true)
+    @games = @q.result(distinct: true).page(params[:page]).per(PER)
   end
 
   def new
