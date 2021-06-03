@@ -24,6 +24,7 @@ class GamesController < ApplicationController
   end
 
   def show
+    @favorite = current_user.favorites.find_by(game_id: @game.id)
     @comments = @game.comments
     @comment = @game.comments.build
   end

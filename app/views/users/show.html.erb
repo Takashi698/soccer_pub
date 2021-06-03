@@ -1,5 +1,5 @@
 <h3>マイページ</h3>
-<p><%= image_tag @user.image.url %></p>
+<p><%= image_tag @user.image.url if @user.image.present? %></p>
 <p>name:<%= @user.name %></p>
 <p>email:<%= @user.email %></p>
 <%= link_to 'マイページ編集', edit_user_registration_path, class:'btn btn-success' %>

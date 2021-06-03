@@ -10,6 +10,15 @@
   <%= link_to '削除', game_path(@game.id), method: :delete, class: 'first_delete', data: {confirm: "投稿を削除してもよろしいでしょうか？"} %>
 <% end %>
 
+<% unless @game.user_id == current_user.id %>
+  <% if @favorite.present? %>
+    <%= link_to 'お気に入りを解除する', favorite_path(id: @favorite.id), method: :delete %>
+  <% else %>
+    <%= link_to 'お気に入りする', favorites_path(game_id: @game.id), method: :post %>
+  <% end %>
+<% end %>
+<br>
+
 <div class="container">
   <p id="notice"><%= notice %></p>
   </div>
