@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   }
   devise_scope :user do
     post '/users/guest_sign_in', to: 'users/sessions#guest'
+    get 'users/favorites', to: 'users/registrations#favorites_index'
   end
   resources :users, only: [:show]
   resources :favorites, only: [:create, :destroy]

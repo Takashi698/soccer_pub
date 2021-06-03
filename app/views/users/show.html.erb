@@ -2,5 +2,7 @@
 <p><%= image_tag @user.image.url if @user.image.present? %></p>
 <p>name:<%= @user.name %></p>
 <p>email:<%= @user.email %></p>
+
+<%= link_to 'お気に入り一覧', users_favorites_path, class:'btn btn-success' %>
 <%= link_to 'マイページ編集', edit_user_registration_path, class:'btn btn-success' %>
 <%= link_to 'game一覧へ', games_path, class:'btn btn-primary' %> 
