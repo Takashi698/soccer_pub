@@ -52,4 +52,4 @@ gem 'mini_magick'
 gem 'bcrypt'
 gem 'kaminari'
 gem 'dotenv-rails'
-
+gem 'ransack'
