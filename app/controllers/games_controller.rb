@@ -24,6 +24,8 @@ class GamesController < ApplicationController
   end
 
   def show
+    @comments = @game.comments
+    @comment = @game.comments.build
   end
 
   def edit
