@@ -1,0 +1,9 @@
+<ul class='side-menu'>
+  <h3 class='side-top'>Menu</h3>
+  <li class='side-lists visibleBorderLeftRight'>
+    <%= link_to '試合一覧', games_path %>
+  </li>
+  <li class='side-lists visibleBorderLeftRight'>
+    <%= link_to 'マイページ', user_path(current_user.id) %>
+  </li>
+</ul>

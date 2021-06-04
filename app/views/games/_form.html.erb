@@ -7,21 +7,25 @@
     <% end %>
   </ul>
 <% end %>
-<%= form_with(model:@game, local: true) do |form| %>
-  <div>
-    <%= form.label :content, '試合内容' %>
-    <%= form.text_area :content %>
+<%= form_with(model:@game, local: true) do |f| %>
+  <div class="form-group">
+    <%= f.label :content, '試合内容' %>
+    <%= f.text_area :content, class: 'form-control' %>
   </div>
   <div>
-    <%= form.label :place, '試合場所' %>
-    <%= form.text_field :place %>
+    <%= f.label :place, '試合場所' %>
+    <%= f.text_field :place, class: 'form-control'  %>
   </div>
-  <div>
-    <%= form.label :match_at, '日時' %>
-    <%= form.datetime_field :match_at %>
+  <div class="form-group">
+    <%= f.label :match_at, '日時' %>
+    <%= f.datetime_field :match_at, class: 'form-control' %>
   </div>
-  <div>
-    <%= form.submit 'Create' %>
+  <div class="form-group">
+    <% if action_name == 'new' || action_name == 'create' %>
+      <%= f.submit 'Create', class: 'btn-denim mx-auto d-block' %>
+    <% else %>
+      <%= f.submit 'Update' %>
+    <% end %>
   </div>
 <% end %>
-<%= link_to '一覧に戻る', games_path %> 
+<%= link_to '一覧に戻る', games_path, class: 'btn btn-primary mx-auto d-block col-md-3' %> 
