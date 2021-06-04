@@ -1,11 +1,11 @@
-<h3>game一覧</h3>
+<h3 class="text-center mt-5">試合一覧</h3>
 
 <table>
   <tr>
     <th>内容</th>
   </tr>
   <tr>
-    <%= link_to 'game新規作成', new_game_path, class:'btn btn-primary' %> 
+    <%= link_to '試合ルームの新規作成', new_game_path, class:'btn btn-primary' %> 
     <%= search_form_for @q do |f| %>
       <%= f.label :content, "Keyword" %>
       <%= f.search_field :content_cont %>
@@ -20,5 +20,7 @@
   </tr>
   <% end %>
   </table>
-  <%= paginate @games %>
+  <div class = 'pagination' >
+      <%= paginate @games %>
+</div> 
 
