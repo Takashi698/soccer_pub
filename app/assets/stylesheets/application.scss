@@ -102,14 +102,34 @@ header a:hover {
   border-style: solid;
 } 
 
+.btn-border {
+  display: inline-block;
+  max-width: 180px;
+  text-align: left;
+  border: 2px solid #70bde9;
+  font-size: 16px;
+  color: #70bde9;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: .4s;
+}
 
-// 消す
-.field_with_errors {
-  display: contents;
-  input {
-    @extend .is-invalid;
-  }
+.btn-border:hover {
+  background-color: #4b75c3;
+  border-color: #4648c5;
+  color: #FFF;
 } 
+
+
+// // 消す
+// .field_with_errors {
+//   display: contents;
+//   input {
+//     @extend .is-invalid;
+//   }
+// } 
 
 //  .hr {
 //   height: 10px;

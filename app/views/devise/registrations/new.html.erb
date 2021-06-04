@@ -1,9 +1,10 @@
-<h2 class="text-center mt-3">サインアップ</h2>
+<h2 class="text-center mt-3">Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= bootstrap_devise_error_messages! %>
+  <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
+    <%= image_tag resource.image.url %><br/>
     <%= f.label :image %><br />
     <%= f.file_field :image %>
   </div>
@@ -39,7 +40,7 @@
   </div>
 
   <div class="form-group">
-    <%= f.submit t('.sign_up'), class: 'btn btn-primary mx-auto d-block' %>
+    <%= f.submit t('.sign_up'), class: 'btn btn-border mx-auto d-block' %>
   </div>
 
   <div class="form-group">
