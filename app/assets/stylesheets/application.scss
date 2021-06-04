@@ -20,17 +20,17 @@
   margin-left: 3%;
 }
 // 入力エラーの設定
-.field_with_errors{
-  color: #ff7676;
-}
+// .field_with_errors{
+//   color: #ff7676;
+// }
 
-// エラー時に赤枠を出す
-.field_with_errors {
-  display: contents;
-  input, textarea {
-    @extend .is-invalid;
-  }
-}
+// // エラー時に赤枠を出す
+// .field_with_errors {
+//   display: contents;
+//   input, textarea {
+//     @extend .is-invalid;
+//   }
+// }
 
  // ヘッダー
  header a, header a:visited{
@@ -180,10 +180,10 @@ header a:hover {
 //   padding: 0;
 // }
 
-//ページネーション
-// .pagination {
-//   justify-content: center;
-// }
+ページネーション
+.pagination {
+  justify-content: center;
+}
 
 // //nav_menu
 // @mixin vertical-align($position) {
