@@ -8,6 +8,19 @@
   </ul>
 <% end %>
 <%= form_with(model:@game, local: true) do |f| %>
+
+  <div class="form-group">
+    <%= f.label :team, 'チーム' %>
+    <%= f.select :team, {'チーム1': 1, 'チーム2': 2}, { include_blank: '選択してください'}, { class: 'col-xs-2' , required: true } %> 
+    VS <%= f.select :team, {'チーム1': 1, 'チーム2': 2}, { include_blank: '選択してください'}, { class: 'col-xs-2' , required: true } %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :upshot, '結果' %>
+    <%= f.select :upshot, {'チーム1': 1, 'チーム2': 2}, { include_blank: '選択してください'}, { class: 'col-xs-2' , required: true } %> 
+    - <%= f.select :team, {'チーム1': 1, 'チーム2': 2}, { include_blank: '選択してください'}, { class: 'col-xs-2' , required: true } %>
+  </div>
+
   <div class="form-group">
     <%= f.label :content, '試合内容' %>
     <%= f.text_area :content, class: 'form-control' %>
