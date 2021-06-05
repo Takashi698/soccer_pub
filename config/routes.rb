@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  root "games#index"
+  get 'tops/index'
+  root "tops#index"
+
+  resources :relationships, only: [:create, :destroy]
+  resources :favorites, only: [:create, :destroy]
   resources :games do
     resources :comments
   end
@@ -19,9 +23,6 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :relationships, only: [:create, :destroy]
-
-  resources :favorites, only: [:create, :destroy]
   
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"

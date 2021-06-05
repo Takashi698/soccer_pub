@@ -7,13 +7,13 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav ml-auto">
         <% if user_signed_in? %>
-          <label><%= current_user.name %>さんがログイン中</label>
+          <label><%= current_user.name %>さん..</label>
           <li class="nav-item"><%= link_to "Home", root_path %></li>
-          <li class="nav-item"><%= link_to 'マイページ', user_path(current_user.id) %></li>
-          <li class="nav-item"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+          <li class="nav-item"><%= link_to 'My page', user_path(current_user.id) %></li>
+          <li class="nav-item"><%= link_to 'Log Out', destroy_user_session_path, method: :delete %></li>
         <% else %>
-          <li class="nav-item"><%= link_to 'ログイン', new_user_session_path %></li>
-          <li class="nav-item"><%= link_to 'サインアップ', new_user_registration_path %></li>
+          <li class="nav-item"><%= link_to 'Log In', new_user_session_path %></li>
+          <li class="nav-item"><%= link_to 'SIgn Up', new_user_registration_path %></li>
         <% end %>
       </ul>
     </div>
