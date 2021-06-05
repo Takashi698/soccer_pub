@@ -1,6 +1,24 @@
 // Place all the styles related to the games controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.content_index img {
+  width: 150px;
+  height: auto;
+}
+
+.search_form_for {
+  position: absolute;
+  top: 35%;
+  left: 40%;
+  transform: translateY(-50%);
+}
+
+.content_index {
+  position: absolute;
+ top: 35%;
+ left: 35%;
+ transform: translateY(-50%);
+}
 
 .form_point {
   text-align: center;

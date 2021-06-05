@@ -1,23 +1,23 @@
 <h3 class="text-center mt-5">試合ルーム一覧</h3>
 
-<table>
-  <tr>
+ <table>
+   <tr>
     <%= link_to '試合ルームの新規作成', new_game_path, class:'btn btn-primary' %> 
     <%= search_form_for @q do |f| %>
       <%= f.label :content, "Keyword" %>
       <%= f.search_field :content_cont %>
       <%= f.submit "検索" %>
     <% end %>
-
     <% @games.each do |game| %>
       <td><%= game.content %></td>
       <td><%= link_to '詳細', game_path(game.id) %></td>
       <td><%= link_to '編集', edit_game_path(game.id) %></td>
       <td><%= link_to '削除', game_path(game.id), method: :delete, data: {confirm: '削除してよろしいですか？'} %></td>
-  </tr>
-  <% end %>
-  </table>
-  
+      </tr>
+      <% end %>
+    </table>
+
+      
   <div class = 'pagination' >
       <%= paginate @games %>
   </div> 
