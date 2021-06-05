@@ -2,6 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+html {
+  font-size: 62.5%;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
 .layer {
   position: relative;
   margin: 0 auto;
@@ -29,7 +38,7 @@
   color: rgb(247, 184, 56);
 }
 
-.top_menu_bar {
+.top_menu_bar a {
   display: flex;
   justify-content: flex-end;
   padding: 0;
@@ -52,12 +61,15 @@
 
 .header {
   background-color: rgb(242, 242, 242);
+  width: 100%;
+  height: 50px;
 }
 
 .container {
   width: 100%;
-  margin: auto;
-  padding: 0;
+  margin: 0 auto;
+  position: relative;
+  min-height: 100%;
 }
 
 

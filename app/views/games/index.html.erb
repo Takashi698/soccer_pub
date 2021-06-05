@@ -1,9 +1,6 @@
-<h3 class="text-center mt-5">試合一覧</h3>
+<h3 class="text-center mt-5">試合ルーム一覧</h3>
 
 <table>
-  <tr>
-    <th>内容</th>
-  </tr>
   <tr>
     <%= link_to '試合ルームの新規作成', new_game_path, class:'btn btn-primary' %> 
     <%= search_form_for @q do |f| %>
@@ -20,7 +17,8 @@
   </tr>
   <% end %>
   </table>
+  
   <div class = 'pagination' >
       <%= paginate @games %>
-</div> 
+  </div> 
 
