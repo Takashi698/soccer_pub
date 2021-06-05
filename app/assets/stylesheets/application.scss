@@ -16,111 +16,111 @@
  @import "font-awesome";
 
  // 共通
-.space{
-  margin-left: 3%;
-}
-// 入力エラーの設定
-// .field_with_errors{
-//   color: #ff7676;
+// .space{
+//   margin-left: 3%;
+// }
+// // 入力エラーの設定
+// // .field_with_errors{
+// //   color: #ff7676;
+// // }
+
+// // // エラー時に赤枠を出す
+// // .field_with_errors {
+// //   display: contents;
+// //   input, textarea {
+// //     @extend .is-invalid;
+// //   }
+// // }
+
+//  // ヘッダー
+//  header a, header a:visited{
+//   color: #4d5152;
+//   text-decoration: none;
+//   background-color: transparent;
+// }
+// header a:hover {
+//   color: #4d5152;
+//   background-color: transparent;
 // }
 
-// // エラー時に赤枠を出す
-// .field_with_errors {
-//   display: contents;
-//   input, textarea {
-//     @extend .is-invalid;
-//   }
+// // ヘッダー
+// .nav-item{
+//   margin-right: 15px;
 // }
 
- // ヘッダー
- header a, header a:visited{
-  color: #4d5152;
-  text-decoration: none;
-  background-color: transparent;
-}
-header a:hover {
-  color: #4d5152;
-  background-color: transparent;
-}
+// // サイドメニュー
 
-// ヘッダー
-.nav-item{
-  margin-right: 15px;
-}
+// .side-menu a, .side-menu li{
+//   list-style: none;
+//   color: #4d5152;
+//   text-decoration: none;
+// }
+// .side-lists{
+//   margin-top: 30px;
+//   margin-bottom: 50px;
+// }
+// .side-top{
+//   margin-top: 50px;
+// }
+// .visibleBorderLeftRight {
+//   color: hsl(222, 25%, 14%);
+//   position: relative;
+// }
+// .visibleBorderLeftRight::after {
+//    content: '';
+//    position: absolute;
+//    width: 100%;
+//    transform: scaleX(1);
+//    height: 2px;
+//    bottom: 0;
+//    left: 0;
+//    background-color: hsl(243, 80%, 62%);
+//    transform-origin: bottom left;
+//    transition: transform .6s cubic-bezier(0.53, 0.21, 0, 1);
+// }
+// .visibleBorderLeftRight:hover::after {
+//    transform: scaleX(0);
+//    transform-origin: bottom right;
+// }
 
-// サイドメニュー
+// // new,editのボタン
+// .btn-denim {
+//   display: inline-block;
+//   max-width: 180px;
+//   text-align: left;
+//   background-color: #293b6a;
+//   font-size: 16px;
+//   color: #FFF;
+//   text-decoration: none;
+//   font-weight: bold;
+//   padding: 8px 16px;
+//   border: 1px dashed #FFF;
+//   box-shadow: 0px 0px 0px 5px #293b6a;/* box-shadowで外枠を */
+// }
 
-.side-menu a, .side-menu li{
-  list-style: none;
-  color: #4d5152;
-  text-decoration: none;
-}
-.side-lists{
-  margin-top: 30px;
-  margin-bottom: 50px;
-}
-.side-top{
-  margin-top: 50px;
-}
-.visibleBorderLeftRight {
-  color: hsl(222, 25%, 14%);
-  position: relative;
-}
-.visibleBorderLeftRight::after {
-   content: '';
-   position: absolute;
-   width: 100%;
-   transform: scaleX(1);
-   height: 2px;
-   bottom: 0;
-   left: 0;
-   background-color: hsl(243, 80%, 62%);
-   transform-origin: bottom left;
-   transition: transform .6s cubic-bezier(0.53, 0.21, 0, 1);
-}
-.visibleBorderLeftRight:hover::after {
-   transform: scaleX(0);
-   transform-origin: bottom right;
-}
+// .btn-denim:hover {
+//   border-style: solid;
+// } 
 
-// new,editのボタン
-.btn-denim {
-  display: inline-block;
-  max-width: 180px;
-  text-align: left;
-  background-color: #293b6a;
-  font-size: 16px;
-  color: #FFF;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 8px 16px;
-  border: 1px dashed #FFF;
-  box-shadow: 0px 0px 0px 5px #293b6a;/* box-shadowで外枠を */
-}
+// .btn-border {
+//   display: inline-block;
+//   max-width: 180px;
+//   text-align: left;
+//   border: 2px solid #70bde9;
+//   font-size: 16px;
+//   color: #70bde9;
+//   text-decoration: none;
+//   font-weight: bold;
+//   padding: 8px 16px;
+//   border-radius: 4px;
+//   transition: .4s;
+// }
 
-.btn-denim:hover {
-  border-style: solid;
-} 
-
-.btn-border {
-  display: inline-block;
-  max-width: 180px;
-  text-align: left;
-  border: 2px solid #70bde9;
-  font-size: 16px;
-  color: #70bde9;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 8px 16px;
-  border-radius: 4px;
-  transition: .4s;
-}
-
-.btn-border:hover {
-  background-color: #4b75c3;
-  border-color: #4648c5;
-  color: #FFF;
-} 
+// .btn-border:hover {
+//   background-color: #4b75c3;
+//   border-color: #4648c5;
+//   color: #FFF;
+// } 
 
 
 // // 消す
