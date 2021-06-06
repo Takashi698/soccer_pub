@@ -12,9 +12,9 @@
   <%= f.fields_for :upshot do |u| %>
     <h3>チーム</h3>
     <%= u.label :チーム %>
-    <%= u.select :team_a, Team.all, include_blank: "選択して下さい" %><br><br>
+    <%= u.select :team_a, Team.transform_for_select_input, include_blank: "選択して下さい" %><br><br>
     <%= u.label :チーム %>
-    <%= u.select :team_b, Team.all, include_blank: "選択して下さい" %><br><br>
+    <%= u.select :team_b, Team.transform_for_select_input, include_blank: "選択して下さい" %><br><br>
   <% end %>
 
   <div class="form-group">
