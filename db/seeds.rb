@@ -19,3 +19,16 @@ Team.create! (
     {name: 'team9'},
   ]
 )
+
+# Game.create! (
+#   [
+#     {place: 'Tokyo'},
+#     {place: 'Osaka'},
+#     {place: 'Kyoto'},
+#     {place: 'Sendai'},
+#     {place: 'Sapporo'},
+#     {place: 'Hakata'},
+#     {place: 'Hiroshima'},
+#     {place: 'Amakusa'},
+#   ]
+# )
