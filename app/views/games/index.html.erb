@@ -9,6 +9,7 @@
       <%= f.search_field :content_cont %>
       <%= f.submit "検索" %>
     <% end %>
+    
     <% @games.each do |game| %>
       <td><%= game.content %></td>
       <td><%= link_to '詳細', game_path(game.id) %></td>

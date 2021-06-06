@@ -19,11 +19,5 @@ module ApplicationHelper
       link_to name, path, class: 'channel_name'
     end
   end
-
-  # def text_placeholder
-  # <<-"EOS".strip_heredoc
-  #     タグをつけることができます。
-  #     複数つけたい場合は' , 'で区切ってください。
-  #     EOS
-  # end
+  
 end
