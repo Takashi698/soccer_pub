@@ -12,20 +12,20 @@
 
   <%= f.fields_for :upshot do |u| %>
     <%= u.label :チーム1 %>
-    <%= u.select :team_a, Team.transform_for_select_input, include_blank: "選択して下さい" %> VS
+    <%= u.collection_select :team_a_id, Team.order(:name),:id,:name, {include_blank: "選択して下さい"}, required: true %> VS
     <%= u.label :チーム2 %>
-    <%= u.select :team_b, Team.transform_for_select_input, include_blank: "選択して下さい" %>
+    <%= u.collection_select :team_b_id, Team.order(:name),:id,:name, {include_blank: "選択して下さい"},required: true %>
   <% end %>
 
   <div class="form-group">
-    <%= f.label :content, 'チーム1' %>
+    <%= f.label :content, 'チーム1・得点' %>
     <%= f.number_field :team_a_point %>
-    <%= f.label :content, 'チーム2' %>
-    <%= f.number_field :team_a_point %>
+    <%= f.label :content, 'チーム2・得点' %>
+    <%= f.number_field :team_b_point %>
   </div>
 
   <div class="form-group">
-    <%= f.label :content, '試合内容' %>
+    <%= f.label :content, 'この試合の見所は？' %>
     <%= f.text_area :content, class: 'form-control' %>
   </div>
   <div>
