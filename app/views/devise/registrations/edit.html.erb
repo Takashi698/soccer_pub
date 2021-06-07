@@ -9,24 +9,24 @@
     <%= f.file_field :image %>
   </div>
 
-  <div class="form-group">
+  <div class="field">
     <%= f.label :name, 'ユーザー名' %>
     <%= f.text_field :name, autofocus: true, autocomplete: 'email', class: 'form-control' %> 
   </div>
 
-  <div class="form-group">
+  <div class="field">
     <%= f.label :email %>
     <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control' %>
   </div>
 
-  <div class="form-group">
+  <div class="field">
     <%= f.label :password %>
     <%= f.password_field :password, autocomplete: 'new-password', class: 'form-control' %>
 
     <small class="form-text text-muted"><%= t('.leave_blank_if_you_don_t_want_to_change_it') %></small>
   </div>
 
-  <div class="form-group">
+  <div class="field">
     <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation, autocomplete: 'new-password', class: 'form-control'  %>
   </div>

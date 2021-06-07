@@ -1,4 +1,8 @@
+<%= render'application/sidebar' %>
+
 <p><%= link_to @game.user.name, user_path(@game.user_id) %>のgameルーム</p>
+<p> チーム1名 : <%= @game.upshot %></p> VS <p> チーム2名 : <%= @game.upshot %></p>
+<p> チーム1の点数 : <%= @game.upshot.team_a_point %></p> VS <p> チーム2の点数 : <%= @game.upshot.team_b_point %></p>
 <p> 試合内容 : <%= @game.content %></p>
 <p> 場所 : <%= @game.place %></p>
 <p> 日時 : <%= @game.match_at %></p>

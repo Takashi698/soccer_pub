@@ -5,3 +5,30 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Team.create! (
+  [
+    {name: 'team1'},
+    {name: 'team2'},
+    {name: 'team3'},
+    {name: 'team4'},
+    {name: 'team5'},
+    {name: 'team6'},
+    {name: 'team7'},
+    {name: 'team8'},
+    {name: 'team9'},
+  ]
+)
+
+# Game.create! (
+#   [
+#     {place: 'Tokyo'},
+#     {place: 'Osaka'},
+#     {place: 'Kyoto'},
+#     {place: 'Sendai'},
+#     {place: 'Sapporo'},
+#     {place: 'Hakata'},
+#     {place: 'Hiroshima'},
+#     {place: 'Amakusa'},
+#   ]
+# )

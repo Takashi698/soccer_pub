@@ -1,7 +1,94 @@
 // Place all the styles related to the games controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.content_index img {
+  width: 150px;
+  height: auto;
+  border-radius: 50px;
+}
+
+.content_index {
+  // position: absolute;
+  // top: 35%;
+  // left: 40%;
+  // transform: translateY(-50%);
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column
+}
+
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+
+
+.sid_content {
+  flex-direction: column;
+  margin: auto 0 ;
+}
+
+.index_container {
+  display: flex;
+  margin-left: 10%;
+  
+}
+
+
+.content_target {
+  margin-top: 30px;
+  overflow: scroll;
+  height: 600px;
+  flex-direction: column;
+  display: flex;
+  width: 100%;
+}
+
+.content_target h3 {
+  text-align:center;
+  margin-bottom: 20px;
+}
 
 .form_point {
   text-align: center;
+}
+
+.search_box  {
+  flex-direction: row-reverse;
+  
+}
+.search_box {
+  text-align:center;
+  margin-bottom: 20px;
+  
+}
+
+
+.new_posts {
+  text-align: center;
+  margin: 30px;
+}
+
+.user_icon .small {
+  flex-direction: row-reverse;
+}
+
+.icon_box .small {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.like-btn {
+  color: #9d9d9d;
+  width: 50px;
+  height: auto;
+}
+
+.like-btn-unlike {
+  color: #ff2581;
+  width: 50px;
+  height: auto;
 }

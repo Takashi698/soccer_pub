@@ -1,0 +1,6 @@
+<h3>チーム情報</h3>
+<p><%= image_tag @team.image.url if @team.image.present? %></p>
+<p>name:<%= @team.name %></p>
+<p>name:<%= @team.description %></p>
+
+  <%= link_to 'game一覧へ', games_path, class:'btn btn-primary' %>
