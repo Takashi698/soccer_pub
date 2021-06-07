@@ -10,11 +10,304 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
-
- */
+ *= require bootstrap/dist/css/bootstrap.min
+ *= require_tree .
+ *= require_self
  @import "bootstrap";
- @import "./games.scss";
- @import "./sidebar.scss";
- @import "./tops.scss";
-//  @import "./users.scss";
+ */
  
+
+//body全体(applications)
+.bkg_color{
+  background-color: whitesmoke;
+  z-index: 0;
+}
+
+//body全体(sessions)
+.bkg_color2 {
+  
+  background-image: url(top-content-img.jpeg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.bkg_color2::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(245, 245, 245, 0.561);
+  }
+
+//link_toの色
+a {
+  color:black;
+  text-decoration:none !important;
+  }
+
+a:hover {/*マウスが上に乗っている状態*/
+color: #FFD2B8 ; //#A19994
+}
+
+//ボタン
+.btn-border-bottom {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.25em 0;
+  text-decoration: none;
+  color: #535454;  //#67c5ff
+}
+
+.btn-border-bottom:before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 4px;
+  top:100%;
+  left: 0;
+  border-radius: 3px;
+  background:#535454; //#67c5ff
+  transition: .2s;
+}
+
+.btn-border-bottom:hover:before {
+  top: -webkit-calc(100% - 3px);
+  top: calc(100% - 3px);
+}
+
+//
+.btn-flat-dashed-border {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  color: #67c5ff;
+  border: dashed 1px #67c5ff;
+  border-radius: 3px;
+  transition: .4s;
+}
+
+.btn-flat-dashed-border:hover {
+  border-style: dotted;
+  color: #679efd;
+}
+
+//お気に入りボタン
+.btn-circle-border-double {
+  display: inline-block;
+  text-decoration: none;
+  color: #535454;
+  width: 50px;
+  height: 50px;
+  line-height: 43px;
+  border-radius: 50%;
+  border: double 4px #535454;
+  text-align: center;
+  overflow: hidden;
+  transition: .6s;
+}
+
+.btn-circle-border-double:hover {
+  -webkit-transform: rotateY(360deg);
+  transform: rotateY(360deg);
+}
+
+//見出し
+
+h1 {
+  position: relative;
+  display: inline-block;
+  padding: 0 55px;
+}
+
+h1:before, h1:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  display: inline-block;
+  width: 45px;
+  height: 1px;
+  background-color: black;
+}
+
+h1:before {
+  left:0;
+}
+h1:after {
+  right: 0;
+}
+
+//区切り線
+
+.hr {
+  height: 5px;
+  border: 0;
+  box-shadow: 0 5px 5px -5px #535454 inset; //#bbb
+}
+
+
+ // コメントフレーム
+ .balloon1 {
+  position: relative;
+  display: inline-block;
+  margin: 1.5em 0;
+  padding: 7px 10px;
+  min-width: 120px;
+  max-width: 100%;
+  color: #555;
+  font-size: 16px;
+  background: #FFD2B8; //#e0edf
+  border-radius: 5px;
+}
+
+.balloon1 p {
+  margin: 0;
+  padding: 0;
+}
+
+//box
+
+.post_box {
+  padding: 0.5em 1em;
+    margin: 2em 0;
+    background: -webkit-repeating-linear-gradient(-45deg, #f0f8ff, #f0f8ff 3px,#e9f4ff 3px, #e9f4ff 7px);
+    background: repeating-linear-gradient(-45deg, #f0f8ff, #f0f8ff 3px,#e9f4ff 3px, #e9f4ff 7px);
+}
+.post_box p {
+  margin: 0; 
+  padding: 0;
+}
+
+//
+
+.box11{
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    color: #5d627b;
+    background: white;
+    border-top: solid 5px #535454;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+}
+.box11 p {
+    margin: 0; 
+    padding: 0;
+}
+
+//
+.box12{
+  padding: 0.5em 0.1em;
+  margin: 1em 0;
+  color: #5989cf;
+  background: #FFD2B8;
+  border-bottom: solid 6px #e0bca7; //#cf9c7e
+  border-radius: 10px;
+  
+}
+.box12 p {
+  margin: 0; 
+  padding: 0;
+}
+//
+
+.box13 {
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  color: #FFF;
+  background: #FFD2B8;
+  border-bottom: solid 6px #dbae94;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+  border-radius: 9px;
+}
+.box13 p {
+  margin: 0; 
+  padding: 0;
+}
+
+//ページネーション
+.pagination {
+  justify-content: center;
+}
+
+//nav_menu
+@mixin vertical-align($position) {
+  position:$position;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+@mixin all-transition($time)
+{
+  transition: all $time;
+  -webkit-transition: all $time;
+}
+body
+{
+  margin: 0;
+  font-family: 'Muli', sans-serif;
+}
+.menu {
+
+  font-weight: 100;
+  background: whitesmoke; //#efefef  #535454
+  width: 200px;
+  height: 100%;
+  padding-left: 85px;
+  position: fixed;
+  z-index: 100;
+  -webkit-box-shadow: -3px 0px 5px 0px rgba(0,0,0,0.2);
+  box-shadow: -3px 0px 5px 0px rgba(0,0,0,0.2);
+  right: -130px;
+  @include all-transition(0.3s);
+  color: black; //#222
+
+  &:hover, &:focus
+  {
+    transform: translate3d(-130px, 0, 0);
+    animation-timing-function: 1s ease-in;
+  }
+  .title
+  {
+    @include vertical-align(absolute);
+    top: 47%;
+    transform: rotate(270deg);
+    left: 10px;
+    font-weight: 500;
+    font-size: 15px;
+
+  }
+
+  .menu .title {
+    text-align: center !important;
+  }
+
+  .nav
+  {
+    @include vertical-align(absolute);
+    font-weight: 100;
+
+    li
+    {
+        padding-bottom: 50px;
+        list-style-type: none;
+
+        a
+        {
+          display: block;
+          text-decoration: none;
+          color: inherit;
+          @include all-transition(0.3s);
+
+          &:hover
+          {
+            color: #FFD2B8; //#aaa
+          }
+        }
+    }
+  }
+}

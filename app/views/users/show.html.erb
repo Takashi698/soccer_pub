@@ -1,5 +1,5 @@
 <h3>マイページ</h3>
-<p><%= image_tag @user.image.url if @user.image.present? %></p>
+<p><%= image_tag @user.image.url, class: 'rounded-circle' if @user.image.present? %></p>
 <p>name:<%= @user.name %></p>
 <p>email:<%= @user.email %></p>
 

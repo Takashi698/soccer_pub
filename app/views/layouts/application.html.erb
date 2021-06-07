@@ -1,3 +1,7 @@
+<header>
+<%= render 'header'  %>
+</header>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -9,16 +13,25 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>    
-    
+  <body class = "bkg_color">  
+    <div class="menu">
+      <div class="title">MENU</div>
+      <ul class="nav">
+        <% if user_signed_in? %>
+          <li><%= link_to 'マイページ', user_path(current_user.id) %></li>
+          <li><%= link_to '試合ルーム一覧', games_path %></li>
+        <% end %>
+      </ul>
+    </div>
+
       <% if user_signed_in? %>
-        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"btn btn-outline-primary"%>
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
       <% else %>
-        <%= link_to 'サインアップ', new_user_registration_path, class:"btn btn-outline-primary" %>
-        <%= link_to "ログイン", new_user_session_path, class:"btn btn-outline-primary" %>
+        <%= link_to 'サインアップ', new_user_registration_path %>
+        <%= link_to "ログイン", new_user_session_path %>
       <% end %>
       
-      <div class = "alert_plece">
+      <div class="col text-left">
         <% if notice %>
           <p class="alert alert-notice"><%= notice %></p>
         <% end %>
@@ -26,8 +39,24 @@
           <p class="alert alert-error"><%= alert %></p>
         <% end %>
       </div>
-      
-      <%= yield %>
 
-  </body>
-</html>
+      <div class="col text-center" >
+        <div class="container">
+          <div class="row">
+            <div class="col-md-1 col-sm-1 col-xs-0">
+            </div>
+            <div class="col-md-9 col-sm-9 col-xs-12">
+              <%= yield %>
+              </div>
+              <div class="col-md-1 col-sm-1 col-xs-0">
+            </div>
+          </div>
+        </div>
+      </div>
+    </body>
+  </html>
+  <br><br><br>
+  <footer>
+        <%= render 'footer'  %>
+  </footer>
+  
