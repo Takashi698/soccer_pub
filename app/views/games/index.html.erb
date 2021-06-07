@@ -10,6 +10,7 @@
 
 <% @games.each do |game|%>
   <div class = "box11" >
+  <p> "#{@game.upshot.team_a_id} VS #{@game.upshot.team_b_id}" </p> 
     <% if game.content.length >= 25 %>
       <% text = game.content %>
       <% text = text.slice(0..25) %>

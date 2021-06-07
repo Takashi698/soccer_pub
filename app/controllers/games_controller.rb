@@ -52,6 +52,6 @@ class GamesController < ApplicationController
     @game = Game.find(params[:id])
   end
   def permitted_parameter
-    params.require(:game).permit(:content, :place, :match_at, upshot_attributes: [:team_a_id, :team_b_id])
+    params.require(:game).permit(:content, :place, :match_at, upshot_attributes: [:id, :team_a_id, :team_b_id, :team_a_point, :team_b_point])
   end
 end
