@@ -1,7 +1,7 @@
 
 
 <p><%= link_to @game.user.name, user_path(@game.user_id) %>の試合ルーム</p>
-<p> チーム1 : <%= @game.upshot.team_a_id.name %></p> VS <p> チーム2 : <%= @game.upshot.team_b_id.name %></p>
+<p> チーム1 : <%= @team_a.name %></p> VS <p> チーム2 : <%= @team_b.name %></p>
 <p> チーム1の点数 : <%= @game.upshot.team_a_point %></p> VS <p> チーム2の点数 : <%= @game.upshot.team_b_point %></p>
 <p> 試合内容 : <%= @game.content %></p>
 <p> 場所 : <%= @game.place %></p>

@@ -32,6 +32,9 @@ class GamesController < ApplicationController
     @favorite = current_user.favorites.find_by(game_id: @game.id)
     @comments = @game.comments
     @comment = @game.comments.build
+
+    @team_a = Team.all.find_by(:id => @game.upshot.team_a_id)
+    @team_b = Team.all.find_by(:id => @game.upshot.team_b_id) 
   end
 
   def edit
