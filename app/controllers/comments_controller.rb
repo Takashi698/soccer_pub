@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :set_game, only: %i(create edit update)
+  before_action :set_game, only: %i(create edit update destroy)
 
   def create
     @game = Game.find(params[:game_id])

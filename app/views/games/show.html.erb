@@ -26,8 +26,7 @@
   </div>
   <p class = 'btn-border-bottom'><p>コメント一覧</p>
   <div id="comments_area">
-    <%= render partial: 'comments/index', locals: { comments: @comments, game: @game } %>
+    <%= render partial: 'comments/index', locals: { comments: @comments, post: @game } %>
   </div>
-  <!-- コメント入力欄をブログの詳細ページに表示するためのrender -->
-  <%= render partial: 'comments/form', locals: { comment: @comment, game: @game } %>
+  <%= render partial: 'comments/form', locals: { comment: @comment, post: @game } %>
 </div>

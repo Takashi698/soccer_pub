@@ -1,11 +1,14 @@
-<% comments.each do |comment| %>
-  <% unless comment.id.nil? %>
-    <p><%= link_to "#{comment.user.name}さん", user_path(comment.user.id) %></p>
-    <p>コメント：<%= comment.content %></p>
-    <p><%= image_tag comment.image.url if comment.image.present?%></p>
-    <% if comment.user == current_user %>
-      <p><%= link_to "コメント編集", edit_game_comment_path(game, comment), remote: true %></p>
-      <p><%= link_to 'コメントを削除する', game_comment_path(comment.game_id, comment.id), method: :delete, remote: true %></p>
+<ul>
+  <% comments.each do |comment| %>
+    <% if comment.id.present? %>
+      <div class="comment-content" id ="this_comment_<%= comment.id %>"></div>
+      <p><%= comment.content %></p>
+      <p><%= image_tag comment.image.url if comment.image.present?%></p>
+      <% if comment.user == current_user %>
+        <p><%= link_to "コメント編集", edit_game_comment_path(@game, comment), remote: true %></p>
+        <p><%= link_to 'コメントを削除する', game_comment_path(comment.game_id, comment.id), method: :delete, remote: true %></p>
+      <% end %>
+      <p class = "hr"></p>
     <% end %>
   <% end %>
-<% end %>
+</ul>
