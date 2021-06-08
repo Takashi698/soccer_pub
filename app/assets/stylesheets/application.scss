@@ -19,9 +19,35 @@
 
 //body全体(applications)
 .bkg_color{
-  background-color: whitesmoke;
-  z-index: 0;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: 
+    linear-gradient(140deg, 
+      #00f3ffA0, 
+      #0028b960 40%, 
+      #00f3ff60 60%, 
+      #00f3ffA0), 
+    url("shibafu.jpg");
+  background-repeat: no-repeat;
+  background-position: 50%;
+  // animation: move 20s infinite both;
 }
+
+@keyframes move{
+  0% {
+    background-size:100% auto;
+  }
+  50% {
+    background-size:140% auto;
+  }
+  100% {
+    background-size:100% auto;
+  }
+}
+  // background-color: whitesmoke;
+  // z-index: 0;
+// }
 
 //body全体(sessions)
 .bkg_color2 {
@@ -254,7 +280,7 @@ body
 .menu {
 
   font-weight: 100;
-  background: whitesmoke; //#efefef  #535454
+  background: rgb(68, 64, 64); //#efefef  #535454
   width: 200px;
   height: 100%;
   padding-left: 85px;

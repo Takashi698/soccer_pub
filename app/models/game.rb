@@ -14,11 +14,12 @@ class Game < ApplicationRecord
   def self.new_and_build
     game = Game.new
     game.build_upshot
+    # game.upshots.build
     return game
   end
 
   def team_a
-    self.upshot.team_a if self.upshot
+    self.upshots.team_a if self.upshot
   end
 
   def team_b
