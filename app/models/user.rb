@@ -10,7 +10,8 @@ class User < ApplicationRecord
   validates :name, presence: true, length: {maximum: 100}
   
   has_many :games, dependent: :destroy
-  has_many :comments, dependent: :destroy
+  has_many :comments
+  # has_many :comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :favorite_users, through: :favorites, source: :user
 

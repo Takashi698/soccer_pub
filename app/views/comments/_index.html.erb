@@ -4,6 +4,7 @@
     <p>コメント：<%= comment.content %></p>
     <p><%= image_tag comment.image.url if comment.image.present?%></p>
     <% if comment.user == current_user %>
+      <p><%= link_to "コメント編集", edit_game_comment_path(game, comment), remote: true %></p>
       <p><%= link_to 'コメントを削除する', game_comment_path(comment.game_id, comment.id), method: :delete, remote: true %></p>
     <% end %>
   <% end %>

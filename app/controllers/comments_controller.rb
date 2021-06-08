@@ -38,7 +38,10 @@ class CommentsController < ApplicationController
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
-    render :index
+    respond_to do |format|
+      flash.now[:notice] = "コメントが削除されました"
+      format.js { render :index }
+    end
   end
 
   private
