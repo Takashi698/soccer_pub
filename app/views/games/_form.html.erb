@@ -8,22 +8,23 @@
   </ul>
 <% end %>
 
-<%= form_with(model: @game, local: true) do |f| %>
 
-  <%= f.fields_for :upshot do |u| %>
-    <%= u.label :チーム1 %>
-    <%= u.collection_select :team_a_id, Team.order(:name),:id,:name, {include_blank: "選択して下さい"}, required: true %> VS
-    <%= u.label :チーム2 %>
-    <%= u.collection_select :team_b_id, Team.order(:name),:id,:name, {include_blank: "選択して下さい"},required: true %>
-  <% end %>
 
-  <div class="form-group">
-    <%= f.label :content, 'チーム1・得点' %>
-    <%= f.number_field :team_a_point %>
-    <%= f.label :content, 'チーム2・得点' %>
-    <%= f.number_field :team_b_point %>
-  </div>
+  <%= form_with(model: @game, local: true) do |f| %>
 
+    <%= f.fields_for :upshot do |u| %>
+      <%= u.label :チーム1 %>
+      <%= u.collection_select :team_a_id, Team.order(:name),:id,:name, {include_blank: "選択して下さい"},required: true %>VS
+      <%= u.label :チーム2 %>
+      <%= u.collection_select :team_b_id, Team.order(:name),:id,:name, {include_blank: "選択して下さい"},required: true %>
+    <div class="form-group">
+      <%= u.label :content, 'チーム1' %>
+      <%= u.number_field :team_a_point %>
+      <%= u.label :content, 'チーム2' %>
+      <%= u.number_field :team_b_point %>
+    </div>
+    <% end %>
+    
   <div class="form-group">
     <%= f.label :content, 'この試合の見所は？' %>
     <%= f.text_area :content, class: 'form-control' %>
