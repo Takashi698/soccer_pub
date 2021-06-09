@@ -2,6 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+html {
+  // font-size: 62.5%;
+  height: 100%;
+}
+
+body{
+  height: 100%;
+  background-color: rgb(255, 228, 228);
+  }
+
 .layer {
   position: relative;
   margin: 0 auto;
@@ -69,3 +79,11 @@
 .navbar-brand {
   padding: 0;
 } 
+
+.alert_plece {
+  width: 100%;
+}
+
+.content_inner {
+  text-align: center;
+}

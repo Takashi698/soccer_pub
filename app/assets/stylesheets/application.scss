@@ -344,7 +344,7 @@ body
   width: 100%;
   height: 50px;
   background-color: #e61919;
-  // min-height: 110vh;/*①高さの最小値*/
+  // min-height: 100vh;/*①高さの最小値*/
   // position: relative;/*②相対位置*/// width: 100%;
 }
 
@@ -354,4 +354,13 @@ body
 
 .header {
   background-color: #e61919;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  height: 50px;
+  /* 以下を追加 */
+  position: relative;
+  top: 0;
+  width: 100%;
+  z-index: 0
 }

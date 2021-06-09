@@ -1,3 +1,4 @@
+<br><br>
 <h3>マイページ</h3>
 <p><%= image_tag @user.image.url, class: 'rounded-circle' if @user.image.present? %></p>
 <p>name:<%= @user.name %></p>
@@ -7,4 +8,4 @@
   <%= render 'follow_form', user: @user unless current_user == @user %>
   <%= link_to 'マイページ編集', edit_user_registration_path, class:'btn btn-success' %>
   <%= link_to 'お気に入り一覧', users_favorites_path, class:'btn btn-success' %>
-  <%= link_to 'game一覧へ', games_path, class:'btn btn-primary' %> 
+  <%= link_to '試合ルーム一覧へ', games_path, class:'btn btn-primary' %> 

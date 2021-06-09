@@ -10,12 +10,16 @@
 
 .content_index {
   // position: absolute;
-  // top: 35%;
-  // left: 40%;
+  // top: 50px;
+  // left: 20%;
   // transform: translateY(-50%);
   margin-top: 50px;
   display: flex;
   flex-direction: column
+}
+
+.post_show {
+  text-align: center;
 }
 
 ul {
