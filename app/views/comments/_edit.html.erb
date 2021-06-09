@@ -10,11 +10,11 @@
     </div>
   <% end %>
   <div class="field">
-    <%= form.text_area :content, id: "comment_content_#{game.id}" %>
+    <%= form.text_area :content, id: "comment_content_#{@game.id}" %>
     <%= form.label :content %>
   </div>
   <div class="field">
-    <%= form.label :image %><br>
+    <%= form.label :image, :content, id: "comment_image_#{@game.id}"  %><br>
     <%= form.file_field :image %>
     <%= form.hidden_field :image_cache %>
   </div>

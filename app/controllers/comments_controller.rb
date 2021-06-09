@@ -49,6 +49,6 @@ class CommentsController < ApplicationController
     @game = Game.find(params[:game_id])
   end
   def permitted_parameter
-    params.require(:comment).permit(:game_id, :content).merge(user_id: current_user.id)
+    params.require(:comment).permit(:game_id, :content, :image, :image_cache).merge(user_id: current_user.id)
   end
 end
