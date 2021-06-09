@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  get 'tops/index'
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root "tops#index"
+  get 'tops/index'
 
   resources :relationships, only: [:create, :destroy]
   resources :favorites, only: [:create, :destroy]
