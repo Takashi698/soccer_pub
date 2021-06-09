@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :set_game, only: %i(create edit update)
+  before_action :set_game, only: %i(create edit update destroy)
 
   def create
     @game = Game.find(params[:game_id])
@@ -38,7 +38,10 @@ class CommentsController < ApplicationController
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
-    render :index
+    respond_to do |format|
+      flash.now[:notice] = "コメントが削除されました"
+      format.js { render :index }
+    end
   end
 
   private
@@ -46,6 +49,6 @@ class CommentsController < ApplicationController
     @game = Game.find(params[:game_id])
   end
   def permitted_parameter
-    params.require(:comment).permit(:game_id, :content).merge(user_id: current_user.id)
+    params.require(:comment).permit(:game_id, :content, :image, :image_cache).merge(user_id: current_user.id)
   end
 end

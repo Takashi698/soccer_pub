@@ -1,33 +1,44 @@
 
+<div class = "content_index post_show">
 
-<p><%= link_to @game.user.name, user_path(@game.user_id) %>の試合ルーム</p>
-<p> チーム1 : <%= @game.upshot.team_a_id %></p> VS <p> チーム2 : <%= @game.upshot.team_b_id %></p>
-<p> チーム1の点数 : <%= @game.upshot.team_a_point %></p> VS <p> チーム2の点数 : <%= @game.upshot.team_b_point %></p>
-<p> 試合内容 : <%= @game.content %></p>
-<p> 場所 : <%= @game.place %></p>
-<p> 日時 : <%= @game.match_at %></p>
+<h3 class="text-center mt-5"><%= link_to @game.user.name, user_path(@game.user_id) %>の試合ルーム</h3><br>
 
-<% if current_user == @game.user %>
-  <%= link_to '編集', edit_game_path(@game.id), class: 'first_edit' %>
-  <%= link_to '削除', game_path(@game.id), method: :delete, class: 'first_delete', data: {confirm: "投稿を削除してもよろしいでしょうか？"} %>
-<% end %>
+  <tr>
+    <td> <p><%= @team_a.name %> 対 <%= @team_b.name %></p> </td> 
+  <tr>
+    <td> <p><%= @game.upshot.team_a_point %> 対 <%= @game.upshot.team_b_point %></p> </td>
+  <tr>
+    <td><p> 場所 : <%= @game.place %></p></td>
+  <tr>
+    <td><p> 日時 : <%= @game.match_at %></p></td>
+  <tr>
+    <td><p> 試合内容 : <%= @game.content %></p></td>
+  <tr>
 
-<% unless @game.user_id == current_user.id %>
-  <% if @favorite.present? %>
-    <%= link_to 'お気に入りを解除する', favorite_path(id: @favorite.id), method: :delete %>
-  <% else %>
-    <%= link_to 'お気に入りする', favorites_path(game_id: @game.id), method: :post %>
+  <% if current_user == @game.user %>
+    <%= link_to '編集', edit_game_path(@game.id),class:"btn btn-outline-success btn-block" %>
+    <%= link_to '削除', game_path(@game.id), method: :delete, data: {confirm: "投稿を削除してもよろしいでしょうか？",class:"btn btn-outline-success btn-block"} %>
   <% end %>
-<% end %>
-<br>
 
-<div class="container">
-  <p id="notice"><%= notice %></p>
+  <% if @game.user_id != current_user.id %>
+    <% if @favorite.present? %>
+      <%= link_to '❤', favorite_path(id: @favorite.id), method: :delete, class: "btn-circle-border-double" %>
+    <% else %>
+      <%= link_to '♡', favorites_path(game_id: @game.id), method: :post, class: "btn-circle-border-double" %>
+    <% end %>
+  <% end %>
+  <br>
+
+  <div class="container">
+    <p id="notice"><%= notice %></p>
+    </div>
+    <p class = 'btn-border-bottom'><p>コメント一覧</p>
+    <div id="comments_area">
+      <%= render partial: 'comments/index', locals: { comments: @comments, post: @game } %>
+    </div>
+    <%= render partial: 'comments/form', locals: { comment: @comment, post: @game } %>
   </div>
-  <p class = 'btn-border-bottom'><p>コメント一覧</p>
-  <div id="comments_area">
-    <%= render partial: 'comments/index', locals: { comments: @comments, game: @game } %>
-  </div>
-  <!-- コメント入力欄をブログの詳細ページに表示するためのrender -->
-  <%= render partial: 'comments/form', locals: { comment: @comment, game: @game } %>
+
+  <%= link_to '試合ルーム一覧', games_path, class: 'btn btn-primary mx-auto d-block col-md-3' %> 
+
 </div>
