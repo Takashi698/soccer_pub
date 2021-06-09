@@ -20,6 +20,12 @@ Team.create! (
   ]
 )
 
+User.create!(name:  "管理者",
+             email: "to@admin.com",
+             password:  "11111111",
+             password_confirmation: "11111111",
+             admin: true)
+
 # Game.create! (
 #   [
 #     {place: 'Tokyo'},
