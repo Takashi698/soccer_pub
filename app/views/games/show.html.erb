@@ -1,11 +1,14 @@
 
 
-<p><%= link_to @game.user.name, user_path(@game.user_id) %>の試合ルーム</p>
-<p> チーム1 : <%= @team_a.name %></p> VS <p> チーム2 : <%= @team_b.name %></p>
-<p> チーム1の点数 : <%= @game.upshot.team_a_point %></p> VS <p> チーム2の点数 : <%= @game.upshot.team_b_point %></p>
-<p> 試合内容 : <%= @game.content %></p>
-<p> 場所 : <%= @game.place %></p>
-<p> 日時 : <%= @game.match_at %></p>
+<h3 class="text-center mt-5"><%= link_to @game.user.name, user_path(@game.user_id) %>の試合ルーム</h3>
+<tr>
+<td> <p><%= @team_a.name %> VS <%= @team_b.name %></p> </td> 
+<tr>
+<td> <p><%= @game.upshot.team_a_point %> : <%= @game.upshot.team_b_point %></p> </td>
+<tr>
+<td><p> 場所 : <%= @game.place %></p></td>
+<td><p> 日時 : <%= @game.match_at %></p></td>
+<td><p> 試合内容 : <%= @game.content %></p></td>
 
 <% if current_user == @game.user %>
   <%= link_to '編集', edit_game_path(@game.id), class: 'first_edit' %>
@@ -14,9 +17,9 @@
 
 <% unless @game.user_id == current_user.id %>
   <% if @favorite.present? %>
-    <%= link_to 'お気に入りを解除する', favorite_path(id: @favorite.id), method: :delete %>
+    <%= link_to '❤︎', favorite_path(id: @favorite.id), method: :delete, class: "btn-circle-border-double" %>
   <% else %>
-    <%= link_to 'お気に入りする', favorites_path(game_id: @game.id), method: :post %>
+    <%= link_to '♡', favorites_path(post_id: @game.id), method: :post, class: "btn-circle-border-double" %>
   <% end %>
 <% end %>
 <br>
