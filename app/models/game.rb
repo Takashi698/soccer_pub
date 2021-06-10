@@ -8,8 +8,10 @@ class Game < ApplicationRecord
   # has_many :teams, dependent: :destroy
 
   validates :content, presence: true, length: {maximum: 1000}
-  validates :place, presence: true
-  validates :match_at, presence: true
+  # validates :place, presence: true
+  # validates :match_at, presence: true
+
+  enum place:{ Osaka: 0, Tokyo: 1, Fukuoka: 2, Hiroshima: 3, Sendai: 4, Chiba: 5 }
 
   def self.new_and_build
     game = Game.new

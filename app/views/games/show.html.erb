@@ -17,7 +17,7 @@
 
   <% if current_user == @game.user %>
     <%= link_to '編集', edit_game_path(@game.id),class:"btn btn-outline-success btn-block" %>
-    <%= link_to '削除', game_path(@game.id), method: :delete, data: {confirm: "投稿を削除してもよろしいでしょうか？",class:"btn btn-outline-success btn-block"} %>
+    <%= link_to '削除', game_path(@game.id), method: :delete, data: {confirm: "投稿を削除してもよろしいでしょうか？"},class:"btn btn-outline-success btn-block" %>
   <% end %>
 
   <% if @game.user_id != current_user.id %>
