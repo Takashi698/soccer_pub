@@ -8,9 +8,16 @@ class Game < ApplicationRecord
   # has_many :teams, dependent: :destroy
 
   validates :content, presence: true, length: {maximum: 1000}
-  # validates :place, presence: true
-  # validates :match_at, presence: true
+  validates :place, presence: true 
+  # validates :team_a, presence: true, if: :same_team_name 
+  # validates :team_b, presence: true, if: :same_team_name 
+  
 
+  # def same_team_name
+  #   team_a == team_b
+  # end 
+
+  # validates :match_at, presence: true
   # enum place:{ Osaka: 0, Tokyo: 1, Fukuoka: 2, Hiroshima: 3, Sendai: 4, Chiba: 5 }
 
   def self.new_and_build
@@ -21,11 +28,11 @@ class Game < ApplicationRecord
   end
 
   def team_a
-    self.upshots.team_a if self.upshot
+    self.upshot.team_a_id if self.upshot
   end
 
   def team_b
-    self.upshot.team_b if self.upshot
+    self.upshot.team_b_id if self.upshot
   end
 
   def team_a?

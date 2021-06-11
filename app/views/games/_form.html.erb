@@ -11,12 +11,13 @@
 
 
   <%= form_with(model: @game, local: true) do |f| %>
-
     <%= f.fields_for :upshot do |u| %>
       <%= u.label :チーム1 %>
       <%= u.collection_select :team_a_id, Team.order(:name),:id,:name, {include_blank: "選択して下さい"},required: true %> 対
       <%= u.label :チーム2 %>
       <%= u.collection_select :team_b_id, Team.order(:name),:id,:name, {include_blank: "選択して下さい"},required: true %>
+      <% if @team.present? %>
+      <% end %>
     <div class="form-group">
       <%= u.label :content, 'チーム1の得点' %>
       <%= u.number_field :team_a_point, in: 1...15  %> 
