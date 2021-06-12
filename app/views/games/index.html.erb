@@ -9,9 +9,6 @@
   <%= f.submit "検索" %>
 <% end %>
 
-
- 
-
 <% @games.each do |game|%>
   <div class = "box11" > 
   <% @team_a = Team.all.find_by(id: game.upshot.team_a_id) %>

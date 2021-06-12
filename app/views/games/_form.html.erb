@@ -8,8 +8,6 @@
   </ul>
 <% end %>
 
-
-
   <%= form_with(model: @game, local: true) do |f| %>
     <%= f.fields_for :upshot do |u| %>
       <%= u.label :チーム1 %>
@@ -24,26 +22,27 @@
       <%= u.label :content, 'チーム2の得点' %>
       <%= u.number_field :team_b_point, in: 1...15  %>
     </div>
-    <% end %>
+  <% end %>
     
-  <div class="form-group">
-    <%= f.label :content, 'この試合の見所は？' %>
-    <%= f.text_area :content, class: 'form-control' %>
-  </div>
-  <div>
-    <%= f.label :place, '試合場所' %>
-    <%= f.select :place, ['Osaka','Tokyo','Fukuoka','Hiroshima','Sendai','Chiba'] %>
-  </div>
-  <div class="form-group">
-    <%= f.label :match_at, 'いつ？' %>
-    <%= f.datetime_field :match_at, class: 'form-control' %>
-  </div>
-  <div class="form-group">
-    <% if action_name == 'new' || action_name == 'create' %>
-      <%= f.submit 'ルーム作成', class: 'btn-denim mx-auto d-block' %>
-    <% else %>
-      <%= f.submit 'ルーム情報の更新' %>
-    <% end %>
-  </div>
-<% end %>
+    <div class="form-group">
+      <%= f.label :content, 'この試合の見所は？' %>
+      <%= f.text_area :content, class: 'form-control' %>
+    </div>
+    <div>
+      <%= f.label :place, '試合場所' %>
+      <%= f.select :place, ['Osaka','Tokyo','Fukuoka','Hiroshima','Sendai','Chiba'] %>
+    </div>
+    <div class="form-group">
+      <%= f.label :match_at, 'いつ？' %>
+      <%= f.datetime_field :match_at, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <% if action_name == 'new' || action_name == 'create' %>
+        <%= f.submit 'ルーム作成', class: 'btn-denim mx-auto d-block' %>
+      <% else %>
+        <%= f.submit 'ルーム情報の更新' %>
+      <% end %>
+    </div>
+  <% end %>
+
 <%= link_to '一覧に戻る', games_path, class: 'btn btn-primary mx-auto d-block col-md-3' %> 

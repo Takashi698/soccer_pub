@@ -24,7 +24,7 @@ class GamesController < ApplicationController
     # @game = Game.new(permitted_parameter)
     # @game.user_id = current_user.id
     
-    # binding.pry
+    binding.pry
     if @game.save
       redirect_to games_path, notice: '作成しました'
     else
