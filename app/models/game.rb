@@ -41,13 +41,5 @@ class Game < ApplicationRecord
 
   def team_b?
     self.upshot.present? && self.upshot.team_b.present?
-  end
-
-  before_save :same_team_name
-  private
-  def same_team_name
-    if params.dig(:game, :upshot_attributes, :team_a_id) == params.dig(:game, :upshot_attributes, :team_b_id)
-      throw(:abort)
-    end
-  end
+  end  
 end
