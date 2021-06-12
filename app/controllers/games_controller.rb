@@ -1,6 +1,7 @@
 class GamesController < ApplicationController
   before_action :authenticate_user!, only: %i(show edit update destroy)
   before_action :set_game, only: %i(show edit update destroy)
+  before_action :limit_same_team, only: %i(create)
   PER = 5
 
   def index
@@ -61,5 +62,13 @@ class GamesController < ApplicationController
   end
   def permitted_parameters
     params.require(:game).permit(:content, :place, :match_at, upshot_attributes: [:id, :team_a_id, :team_b_id, :team_a_point, :team_b_point])
+  end
+
+  def limit_same_team
+    @game = Game.new(permitted_parameters)
+      if @game.upshot.team_a_id == @game.upshot.team_b_id
+        flash[:notice] = "同じチームは選べません..."
+        render 'new'
+      end
   end
 end
