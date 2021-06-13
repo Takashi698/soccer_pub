@@ -20,6 +20,8 @@ Team.create! (
   ]
 )
 
+# 管理者
+
 # User.create!(name:  "管理者",
 #              email: "to@admin.com",
 #              password:  "11111111",
