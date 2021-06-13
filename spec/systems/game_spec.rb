@@ -2,8 +2,8 @@ require 'rails_helper'
 RSpec.describe '試合ルーム関連機能', type: :system do
   before do
     user = FactoryBot.create(:user)
-    @horse_diary = FactoryBot.create(:game, user_id: user.id)
-    @horse_diary = FactoryBot.create(:second_game, user_id: user.id)
+    @game = FactoryBot.create(:game, user_id: user.id)
+    @comment = FactoryBot.create(:comment, user_id: user.id, game_id: @game.id)
     visit new_user_session_path
     click_on 'ゲストログイン（閲覧用）'
   end
@@ -65,6 +65,25 @@ RSpec.describe '試合ルーム関連機能', type: :system do
     users_favorites_path
     expect(page).to have_content 'first'
   end
-  it 'コメント機能' do
+  it 'コメント投稿機能' do
+    fill_in 'Eメール', with: 'test1@example.com'
+    fill_in 'パスワード', with: 'password'
+    click_on 'Log in'
+    click_on 'test1'
+    fill_in 'Content', with: 'comment'
+    click_on '登録する'
+    expect(page).to have_content 'comment'
   end
+  it 'コメント編集機能' do
+    visit new_user_session_path
+    fill_in 'Eメール', with: 'one@example.com'
+    fill_in 'パスワード', with: 'aaaaaa'
+    click_on 'Log in'
+
+  end
+  it 'コメント削除機能' do
+    visit new_user_session_path
+    fill_in 'Eメール', with: 'one@example.com'
+    fill_in 'パスワード', with: 'aaaaaa'
+    click_on 'Log in'
 end
