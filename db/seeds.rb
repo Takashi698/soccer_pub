@@ -20,15 +20,6 @@ Team.create! (
   ]
 )
 
-# 管理者
-
-# User.create!(name:  "管理者",
-#              email: "to@admin.com",
-#              password:  "11111111",
-#              password_confirmation: "11111111",
-#              admin: true)
-
-
 # User
 
 user1 = User.create!(
@@ -37,6 +28,7 @@ user1 = User.create!(
   password: "password",
   password_confirmation: "password",
   image: File.open("./app/assets/images/icon_images/icon1.jpg"),
+  admin: true
 )
 user2 = User.create!(
   name: "Shun",
@@ -143,16 +135,16 @@ Favorite.create!(
     {user_id: user1.id, game_id: game1_1.id},
 
     # user2
-    {user_id: user1.id, game_id: game1_2.id},
+    {user_id: user2.id, game_id: game1_3.id},
 
     # user3
-    {user_id: user1.id, game_id: game1_3.id},
+    {user_id: user3.id, game_id: game1_2.id},
 
     # user4
-    {user_id: user1.id, game_id: game1_4.id},
+    {user_id: user4.id, game_id: game1_5.id},
 
     # user5
-    {user_id: user1.id, game_id: game1_5.id},
+    {user_id: user5.id, game_id: game1_4.id},
   ]
 )
 

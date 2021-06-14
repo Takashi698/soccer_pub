@@ -1,7 +1,7 @@
 class FavoritesController < ApplicationController
   def create
     favorite = current_user.favorites.create(game_id: params[:game_id])
-    redirect_to games_path, notice: 'お気に入りしました'
+    redirect_to game_path("#{params[:game_id]}"), notice: 'お気に入りしました'
   end
 
   def destroy
