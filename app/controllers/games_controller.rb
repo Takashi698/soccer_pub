@@ -23,8 +23,6 @@ class GamesController < ApplicationController
     # @game.upshot.team_b_point = params[:team_b_point]
     # @game = Game.new(permitted_parameter)
     # @game.user_id = current_user.id
-    
-    binding.pry
     if @game.save
       redirect_to games_path, notice: '作成しました'
     else
@@ -56,10 +54,12 @@ class GamesController < ApplicationController
     @game.destroy
     redirect_to games_path, notice: '削除しました'
   end
+
   private
   def set_game
     @game = Game.find(params[:id])
   end
+
   def permitted_parameters
     params.require(:game).permit(:content, :place, :match_at, upshot_attributes: [:id, :team_a_id, :team_b_id, :team_a_point, :team_b_point])
   end

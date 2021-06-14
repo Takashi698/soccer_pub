@@ -54,7 +54,7 @@ user3 = User.create!(
 )
 user4 = User.create!(
   name: "Toku",
-  email: "test44444@example.com",
+  email: "test4@example.com",
   password: "password",
   password_confirmation: "password",
   image: File.open("./app/assets/images/icon_images/icon1.jpg"),
@@ -67,68 +67,92 @@ user5 = User.create!(
   image: File.open("./app/assets/images/icon_images/icon1.jpg"),
 )
 
+
 # Game
 
 game1_1 = Game.create!(
-  team_a_id: team1_id,
-  team_b_id: team2_id,
-  team_a_point: 5, 
-  team_b_point: 6,
   content: "100歳を迎える岡選手がハットトリックを達成",
   place: 'Osaka',
   match_at: DateTime.new(2021,3,3,3,3),
   user_id: user4.id,
 )
+Upshot.create!(
+  team_a_id: Team.findRandom.id,
+  team_b_id: Team.findRandom.id,
+  team_a_point: 5,
+  team_b_point: 6,
+  game_id: game1_1.id,
+)
 game1_2 = Game.create!(
-  team_a_id: team3.id,
-  team_b_id: team4.id,
   content: "サポーターが全員乱入、試合を一時中断",
   place: 'Tokyo',
   match_at: DateTime.new(2021,3,3,3,3),
   user_id: user2.id,
 )
+Upshot.create!(
+  game_id: game1_2.id,
+  team_a_id: Team.findRandom.id,
+  team_b_id: Team.findRandom.id,
+  team_a_point: 5, 
+  team_b_point: 6,
+)
 game1_3 = Game.create!(
-  team_a_id: team5.id,
-  team_b_id: team6.id,
   content: "ハーフタイム中にテロ予告があり、試合に緊張感が走る",
   place: 'Hiroshima',
   match_at: DateTime.new(2021,6,6,6,6),
   user_id: user3.id,
 )
+Upshot.create!(
+  game_id: game1_3.id,
+  team_a_id: Team.findRandom.id,
+  team_b_id: Team.findRandom.id,
+  team_a_point: 5, 
+  team_b_point: 6,
+)
 game1_4 = Game.create!(
-  team_a_id: team3.id,
-  team_b_id: team4.id,
   content: "台風急接近により、ゴールが吹っ飛ぶ",
   place: 'Tokyo',
   match_at: DateTime.new(2021,6,6,6,6),
   user_id: user4.id,
 )
+Upshot.create!(
+  game_id: game1_4.id,
+  team_a_id: Team.findRandom.id,
+  team_b_id: Team.findRandom.id,
+  team_a_point: 5, 
+  team_b_point: 6,
+)
 game1_5 = Game.create!(
-  team_a_id: team5.id,
-  team_b_id: team6.id,
   content: "試合中にUFOが上空に現れ、試合が中断",
   place: 'Hiroshima',
-  match_at: Date.new(2021,6,6,6,6),
-  user_id: user5.id,
+  match_at: Date.parse('Mon, 14 Jun 2020 06:56:25 UTC +00:00'),
+  user_id: user5.id
+)
+Upshot.create!(
+  game_id: game1_5.id,
+  team_a_id: Team.findRandom.id,
+  team_b_id: Team.findRandom.id,
+  team_a_point: 5, 
+  team_b_point: 6,
 )
 
  # Gameお気に入り
- GameFavorite.create!(
+Favorite.create!(
   [
     # user1
-    {user_id: user1.id, Game_id: game1_1.id},
+    {user_id: user1.id, game_id: game1_1.id},
 
     # user2
-    {user_id: user1.id, Game_id: game1_2.id},
+    {user_id: user1.id, game_id: game1_2.id},
 
     # user3
-    {user_id: user1.id, Game_id: game1_3.id},
+    {user_id: user1.id, game_id: game1_3.id},
 
     # user4
-    {user_id: user1.id, Game_id: game1_4.id},
+    {user_id: user1.id, game_id: game1_4.id},
 
     # user5
-    {user_id: user1.id, Game_id: game1_5.id},
+    {user_id: user1.id, game_id: game1_5.id},
   ]
 )
 
@@ -150,15 +174,11 @@ Relationship.create!(
     
     {follower_id: user4.id, followed_id: user3.id},
     {follower_id: user4.id, followed_id: user5.id},
-    {follower_id: user4.id, followed_id: user6.id},
+    {follower_id: user4.id, followed_id: user1.id},
 
     {follower_id: user5.id, followed_id: user3.id},
     {follower_id: user5.id, followed_id: user4.id},
-    {follower_id: user5.id, followed_id: user6.id},
-
-    {follower_id: user6.id, followed_id: user3.id},
-    {follower_id: user6.id, followed_id: user4.id},
-    {follower_id: user6.id, followed_id: user5.id},
+    {follower_id: user5.id, followed_id: user1.id},
 
   ]
 )
