@@ -1,7 +1,13 @@
 require 'rails_helper'
 RSpec.describe '試合ルーム関連機能', type: :system do
     let!(:user) {FactoryBot.create(:user)}
-    let!(:game) {FactoryBot.create(:game, user_id: user.id)}
+    let!(:team_a) {FactoryBot.create(:team_a)}
+    let!(:team_b) {FactoryBot.create(:team_b)}
+    let!(:upshot) {FactoryBot.create(:upshot)}
+    let!(:game) {FactoryBot.create(:game, user_id: user.id, team_a_id: team_a.id, team_b_id: team_b.id, upshot_id: upshot.id )}
+    let!(:game2) {FactoryBot.create(:game2, user_id: user.id, team_a_id: team_a.id, team_b_id: team_b.id, upshot_id: upshot.id )}
+    let!(:game2) {FactoryBot.create(:game2, user_id: user.id, team_a_id: team_a.id, team_b_id: team_b.id, upshot_id: upshot.id )}
+    # binding.irb
     before do
       visit new_user_session_path
       fill_in 'Eメール', with: 'test1@example.com'
@@ -13,7 +19,6 @@ RSpec.describe '試合ルーム関連機能', type: :system do
   #   visit new_user_session_path
   #   click_on 'ゲストログイン（閲覧用）'
   it '試合ルーム作成機能' do
-    binding.irb
     click_link '試合ルーム一覧へ'
     visit games_path
     find('input#q_content_cont').set('?')
