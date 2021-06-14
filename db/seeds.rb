@@ -73,7 +73,7 @@ user5 = User.create!(
 game1_1 = Game.create!(
   content: "100歳を迎える岡選手がハットトリックを達成",
   place: 'Osaka',
-  match_at: DateTime.new(2021,3,3,3,3),
+  match_at: Date.parse('Mon, 3 Jun 2020 06:56:25 UTC +00:00'),
   user_id: user4.id,
 )
 Upshot.create!(
@@ -86,7 +86,7 @@ Upshot.create!(
 game1_2 = Game.create!(
   content: "サポーターが全員乱入、試合を一時中断",
   place: 'Tokyo',
-  match_at: DateTime.new(2021,3,3,3,3),
+  match_at: Date.parse('Mon, 27 Jun 2020 06:56:25 UTC +00:00'),
   user_id: user2.id,
 )
 Upshot.create!(
@@ -99,7 +99,7 @@ Upshot.create!(
 game1_3 = Game.create!(
   content: "ハーフタイム中にテロ予告があり、試合に緊張感が走る",
   place: 'Hiroshima',
-  match_at: DateTime.new(2021,6,6,6,6),
+  match_at: Date.parse('Mon, 21 Jun 2020 06:56:25 UTC +00:00'),
   user_id: user3.id,
 )
 Upshot.create!(
@@ -112,7 +112,7 @@ Upshot.create!(
 game1_4 = Game.create!(
   content: "台風急接近により、ゴールが吹っ飛ぶ",
   place: 'Tokyo',
-  match_at: DateTime.new(2021,6,6,6,6),
+  match_at: Date.parse('Mon, 15 Jun 2020 06:56:25 UTC +00:00'),
   user_id: user4.id,
 )
 Upshot.create!(
@@ -125,7 +125,7 @@ Upshot.create!(
 game1_5 = Game.create!(
   content: "試合中にUFOが上空に現れ、試合が中断",
   place: 'Hiroshima',
-  match_at: Date.parse('Mon, 14 Jun 2020 06:56:25 UTC +00:00'),
+  match_at: Date.parse('Mon, 6 Jun 2020 06:56:25 UTC +00:00'),
   user_id: user5.id
 )
 Upshot.create!(
