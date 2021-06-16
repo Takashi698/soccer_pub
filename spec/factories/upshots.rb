@@ -27,4 +27,26 @@ FactoryBot.define do
     # team_b_id { Team.second }
   end
 
+  factory :upshot2, class: Upshot do
+    team_a = Team.create(name: "TeamA")
+    team_b = Team.create(name: "TeamB")
+
+    team_a_id { team_a.id }
+    team_b_id { team_b.id }
+    team_a_point { 2 }
+    team_b_point { 3 }
+    association :game2
+  end
+
+  factory :upshot3, class: Upshot do
+    team_a = Team.create(name: "TeamA")
+    team_b = Team.create(name: "TeamB")
+
+    team_a_id { team_a.id }
+    team_b_id { team_b.id }
+    team_a_point { 2 }
+    team_b_point { 3 }
+    association :game3
+  end
+
 end
