@@ -1,11 +1,13 @@
 require 'rails_helper'
-describe 'Commentモデル機能', type: :model do
-  context 'バリデーション' do
-    it 'commentのcontentが空の場合' do
-      user = FactoryBot.create(:user)
-      post = FactoryBot.create(:game, user_id: user.id)
-      comment = Comment.new(content: nil, user_id: user.id, game_id: game.id)
-      expect(comment).not_to be_valid
+RSpec.describe Comment, type: :model do
+  describe 'commentモデル機能' do
+    context 'バリデーションテスト' do
+      it 'コメントが空の場合' do
+        user4 = create(:user4)
+        game3 = create(:game3)
+        comment = Comment.new(content: nil, user_id: user4.id, game_id: game3.id)
+        expect(comment).to be_invalid
+      end
     end
   end
 end

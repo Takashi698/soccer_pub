@@ -9,6 +9,7 @@ class Game < ApplicationRecord
 
   validates :content, presence: true, length: {maximum: 1000}
   validates :place, presence: true 
+
   # validates :team_a, presence: true, if: :same_team_name 
   # validates :team_b, presence: true, if: :same_team_name 
   

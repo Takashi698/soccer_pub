@@ -1,8 +1,8 @@
 require 'rails_helper'
 RSpec.describe '試合ルーム関連機能', type: :system do
   before do
-    upshot = FactoryBot.create(:upshot)
-    user2 = FactoryBot.create(:user2)
+    upshot5 = FactoryBot.create(:upshot5)
+    user6 = FactoryBot.create(:user6)
     # upshot2 = FactoryBot.create(:upshot2, user: user2)
     # upshot3 = FactoryBot.create(:upshot3, user: user2)
     # binding.irb
@@ -17,16 +17,10 @@ RSpec.describe '試合ルーム関連機能', type: :system do
     # # binding.irb
 
     visit new_user_session_path
-    fill_in 'Eメール', with: 'test2@example.com'
+    fill_in 'Eメール', with: 'test6@example.com'
     fill_in 'パスワード', with: 'password'
     click_button 'commit'
   end
-  visit games_path
-    FactoryBot.create(:game, user: user)
-    @comment = FactoryBot.create(:comment, user_id: user.id, game_id: @game.id)
-    visit new_user_session_path
-    click_on 'ゲストログイン（閲覧用）'
-  binding.irb
 
   it '試合ルーム作成機能' do
     visit games_path
@@ -40,7 +34,7 @@ RSpec.describe '試合ルーム関連機能', type: :system do
     find("#game_place").find("option[value='Tokyo']").select_option
     fill_in 'game[match_at]', with: '002020-10-07-03:03:03'
     sleep(0.5)
-    binding.irb
+    # binding.irb
     click_button 'ルーム作成'
     expect(page).to have_content 'TeamA'
     expect(page).to have_content 'TeamB'
@@ -51,8 +45,7 @@ RSpec.describe '試合ルーム関連機能', type: :system do
   it '試合ルーム編集機能' do
     click_link'試合ルーム一覧へ'
     sleep(0.5)
-    click_link '編集'
-    
+    page.all(".box11 a")[1].click
     find("#game_upshot_attributes_team_a_id").find("option[value='1']").select_option
     find("#game_upshot_attributes_team_b_id").find("option[value='2']").select_option
     fill_in 'game[upshot_attributes][team_a_point]',with: ' 2 '
@@ -61,17 +54,18 @@ RSpec.describe '試合ルーム関連機能', type: :system do
     find("#game_place").find("option[value='Tokyo']").select_option
     # binding.irb
     fill_in 'game[match_at]', with: '002020-10-07-03:03:03'
-    sleep(0.5)
+    # sleep(0.5)
     click_button 'ルーム情報の更新'
     expect(page).to have_content 'TeamB'
     expect(page).to have_content 'TeamA'
   end
 
   it '試合ルーム削除機能' do
-    click_link'試合ルーム一覧へ'
+    click_link '試合ルーム一覧へ'
+    page.all(".box11 a")[2].click
     sleep(0.5)
-    click_link '削除'
-    accept_alert
+    page.driver.browser.switch_to.alert.accept
+    sleep(0.5)
   end
 
   it '試合ルーム検索機能' do
@@ -85,19 +79,21 @@ RSpec.describe '試合ルーム関連機能', type: :system do
   it '試合ルームお気に入り機能' do
     click_link'試合ルーム一覧へ'
     sleep(0.5)
-    click_on '試合ルーム'
+    # binding.irb
+    page.all(".box11 a")[0].click
     click_on '♡'
     click_on '試合ルーム一覧'
     expect(page).to have_content 'TeamB'
     expect(page).to have_content 'TeamA'
+    sleep(0.5)
   end
 
   it 'コメント投稿機能' do
     click_link'試合ルーム一覧へ'
+    page.all(".box11 a")[0].click
     sleep(0.5)
-    click_on '試合ルーム'
     # binding.irb
-    fill_in 'Content', with: 'test_comment'
+    fill_in 'comment[content]', with: 'test_comment'
     click_on '登録する'
     expect(page).to have_content 'test_comment'
     click_on '試合ルーム一覧'
@@ -107,13 +103,13 @@ RSpec.describe '試合ルーム関連機能', type: :system do
 
   it 'コメント編集機能' do
     click_link'試合ルーム一覧へ'
-    sleep(0.5)
-    click_on '試合ルーム'
+    # sleep(0.5)
+    page.all(".box11 a")[0].click
     # binding.irb
-    fill_in 'Content', with: 'test_comment'
+    fill_in 'comment[content]', with: 'test_comment'
     click_on '登録する'
     click_on 'コメント編集'
-    fill_in 'Content', with: 'test_comment'
+    fill_in 'comment[content]', with: 'test_comment'
     click_on '更新する'
     expect(page).to have_content 'test_comment'
     click_on '試合ルーム一覧'
@@ -123,10 +119,10 @@ RSpec.describe '試合ルーム関連機能', type: :system do
 
   it 'コメント削除機能' do
     click_link'試合ルーム一覧へ'
-    sleep(0.5)
-    click_on '試合ルーム'
+    # sleep(0.5)
+    page.all(".box11 a")[0].click
     # binding.irb
-    fill_in 'Content', with: 'test_comment'
+    fill_in 'comment[content]', with: 'test_comment'
     click_on '登録する'
     click_on 'コメントを削除する'
     expect(page).to have_no_content 'test_comment'
