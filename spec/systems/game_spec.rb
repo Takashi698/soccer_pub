@@ -129,6 +129,7 @@ RSpec.describe '試合ルーム関連機能', type: :system do
     fill_in 'Content', with: 'test_comment'
     click_on '登録する'
     click_on 'コメントを削除する'
+    expect(page).to have_no_content 'test_comment'
     click_on '試合ルーム一覧'
     expect(page).to have_content 'TeamB'
     expect(page).to have_content 'TeamA'
