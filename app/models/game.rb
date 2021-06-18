@@ -42,5 +42,9 @@ class Game < ApplicationRecord
 
   def team_b?
     self.upshot.present? && self.upshot.team_b.present?
-  end  
+  end
+
+  def managable?(user)
+    return user.id == self.user_id || user.admin
+  end
 end

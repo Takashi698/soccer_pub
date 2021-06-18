@@ -2,6 +2,8 @@ class GamesController < ApplicationController
   before_action :authenticate_user!, only: %i(show edit update destroy)
   before_action :set_game, only: %i(show edit update destroy)
   before_action :limit_same_team, only: %i(create)
+  before_action :check_managable, only: %i(edit update destroy)
+
   PER = 5
 
   def index
@@ -71,4 +73,9 @@ class GamesController < ApplicationController
         render 'new'
       end
   end
+
+  def check_managable
+    redirect_to games_path unless @game.managable?(current_user)
+  end
+
 end

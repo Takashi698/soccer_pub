@@ -103,13 +103,14 @@ RSpec.describe '試合ルーム関連機能', type: :system do
 
   it 'コメント編集機能' do
     click_link'試合ルーム一覧へ'
-    # sleep(0.5)
     page.all(".box11 a")[0].click
     # binding.irb
     fill_in 'comment[content]', with: 'test_comment'
+    sleep(0.5)
     click_on '登録する'
     click_on 'コメント編集'
     fill_in 'comment[content]', with: 'test_comment'
+    sleep(0.5)
     click_on '更新する'
     expect(page).to have_content 'test_comment'
     click_on '試合ルーム一覧'
@@ -123,6 +124,7 @@ RSpec.describe '試合ルーム関連機能', type: :system do
     page.all(".box11 a")[0].click
     # binding.irb
     fill_in 'comment[content]', with: 'test_comment'
+    sleep(0.5)
     click_on '登録する'
     click_on 'コメントを削除する'
     expect(page).to have_no_content 'test_comment'
