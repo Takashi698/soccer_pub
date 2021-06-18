@@ -22,20 +22,22 @@
       <%= u.label :content, 'チーム2の得点' %>
       <%= u.number_field :team_b_point, in: 1...15  %>
     </div>
-  <% end %>
     
     <div class="form-group">
       <%= f.label :content, 'この試合の見所は？' %>
-      <%= f.text_area :content, class: 'form-control' %>
+      <%= f.text_area :content, placeholder:"投稿内容を1000文字まで入力可", class: 'form-control' %>
     </div>
+
     <div>
       <%= f.label :place, '試合場所' %>
       <%= f.select :place, ['Osaka','Tokyo','Fukuoka','Hiroshima','Sendai','Chiba'] %>
     </div>
+
     <div class="form-group">
       <%= f.label :match_at, 'いつ？' %>
       <%= f.datetime_field :match_at, class: 'form-control' %>
     </div>
+
     <div class="form-group">
       <% if action_name == 'new' || action_name == 'create' %>
         <%= f.submit 'ルーム作成', class: 'btn-denim mx-auto d-block' %>
@@ -43,6 +45,8 @@
         <%= f.submit 'ルーム情報の更新' %>
       <% end %>
     </div>
+
   <% end %>
+<% end %>
 
 <%= link_to '試合ルーム一覧', games_path, class: 'btn btn-primary mx-auto d-block col-md-3' %> 
