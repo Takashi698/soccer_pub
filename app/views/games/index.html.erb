@@ -9,18 +9,13 @@
   <%= f.submit "検索" %>
 <% end %>
 
-
- 
-
 <% @games.each do |game|%>
   <div class = "box11" > 
   <% @team_a = Team.all.find_by(id: game.upshot.team_a_id) %>
   <%= @team_a.name %> 対
   <% @team_b = Team.all.find_by(id: game.upshot.team_b_id) %>
   <%= @team_b.name %> 
-    <td><%= link_to '試合ルーム', game_path(game.id) %></td>
-    <td><%= link_to '編集', edit_game_path(game.id) %></td>
-    <td><%= link_to '削除', game_path(game.id), method: :delete, data: {confirm: '削除してよろしいですか？'} %></td>
+  <tr><td><%= link_to '試合ルーム', game_path(game.id) %></td>
   </div>
 <% end %>
   

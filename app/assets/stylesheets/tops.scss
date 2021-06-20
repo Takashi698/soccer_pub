@@ -20,7 +20,7 @@ body{
 .main-image {
   background-image: image-url("top-content-img.jpeg");
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center;
   background-size:cover;
   height: 0px;
   padding-top: 46.7%;
@@ -65,7 +65,7 @@ body{
   position: absolute;
   top: 65%;
   left: 60%;
-  font-size: 5vw;
+  font-size: 3vw;
   color: #ffffff;
 }
 
@@ -86,4 +86,9 @@ body{
 
 .content_inner {
   text-align: center;
+}
+
+.tops_text-center {
+  text-align: center;
+  margin: 0 auto;
 }

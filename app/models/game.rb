@@ -9,6 +9,7 @@ class Game < ApplicationRecord
 
   validates :content, presence: true, length: {maximum: 1000}
   validates :place, presence: true 
+
   # validates :team_a, presence: true, if: :same_team_name 
   # validates :team_b, presence: true, if: :same_team_name 
   
@@ -41,5 +42,9 @@ class Game < ApplicationRecord
 
   def team_b?
     self.upshot.present? && self.upshot.team_b.present?
-  end  
+  end
+
+  # def managable?(user)
+  #   return user.id == self.user_id || user.admin
+  # end
 end

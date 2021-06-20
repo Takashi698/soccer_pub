@@ -1,4 +1,14 @@
 <div class = "new_posts">
+  <% if @game.errors.any? %>
+  <div>
+    <ul>
+      <% @game.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
   <h3 class="text-center mt-5">試合ルーム作成</h3>
   <%= render 'form' %> 
 </div>

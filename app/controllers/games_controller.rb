@@ -2,6 +2,8 @@ class GamesController < ApplicationController
   before_action :authenticate_user!, only: %i(show edit update destroy)
   before_action :set_game, only: %i(show edit update destroy)
   before_action :limit_same_team, only: %i(create)
+  # before_action :check_managable, only: %i(edit update destroy)
+
   PER = 5
 
   def index
@@ -23,8 +25,6 @@ class GamesController < ApplicationController
     # @game.upshot.team_b_point = params[:team_b_point]
     # @game = Game.new(permitted_parameter)
     # @game.user_id = current_user.id
-    
-    # binding.pry
     if @game.save
       redirect_to games_path, notice: '作成しました'
     else
@@ -56,10 +56,12 @@ class GamesController < ApplicationController
     @game.destroy
     redirect_to games_path, notice: '削除しました'
   end
+
   private
   def set_game
     @game = Game.find(params[:id])
   end
+
   def permitted_parameters
     params.require(:game).permit(:content, :place, :match_at, upshot_attributes: [:id, :team_a_id, :team_b_id, :team_a_point, :team_b_point])
   end
@@ -71,4 +73,9 @@ class GamesController < ApplicationController
         render 'new'
       end
   end
+
+  # def check_managable
+  #   redirect_to games_path unless @game.managable?(current_user)
+  # end
+
 end
