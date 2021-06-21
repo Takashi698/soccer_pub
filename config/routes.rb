@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'tops/index'
 
   resources :relationships, only: [:create, :destroy]
-  resources :favorites, only: [:create, :destroy]
+  resources :favorites, only: [:create, :destroy, :show]
   resources :teams, only: [:show]
   
   resources :games do
@@ -17,7 +17,6 @@ Rails.application.routes.draw do
   }
   devise_scope :user do
     post '/users/guest_sign_in', to: 'users/sessions#guest'
-    get 'users/favorites', to: 'users/registrations#favorites_index'
   end
 
   resources :users, only: [:show] do
