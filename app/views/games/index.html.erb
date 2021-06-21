@@ -1,8 +1,17 @@
-
 <h3 class="text-center mt-5">試合ルーム一覧</h3>
 <br><br>
 <%= link_to '試合ルームの新規作成', new_game_path, class:'btn-border-bottom' %> 
 <br><br>
+
+<div class="col text-middle">
+<% if notice %>
+  <p class="alert alert-notice"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-error"><%= alert %></p>
+<% end %>
+</div>
+
 
 <%= search_form_for @q do |f| %>
   <%= f.search_field :content_cont %>
@@ -15,7 +24,8 @@
   <%= @team_a.name %> 対
   <% @team_b = Team.all.find_by(id: game.upshot.team_b_id) %>
   <%= @team_b.name %> 
-  <tr><td><%= link_to '試合ルーム', game_path(game.id) %></td>
+  <td><%= link_to '試合ルーム', game_path(game.id) %></td><br>
+  作者: <%= link_to game.user.name, user_path(game.user_id) %> 
   </div>
 <% end %>
   
