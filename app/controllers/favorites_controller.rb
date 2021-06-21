@@ -1,4 +1,6 @@
 class FavoritesController < ApplicationController
+  before_action :authenticate_user!
+  
   def create
     favorite = current_user.favorites.create(game_id: params[:game_id])
     redirect_to game_path(favorite.game_id), notice: 'お気に入りしました'
