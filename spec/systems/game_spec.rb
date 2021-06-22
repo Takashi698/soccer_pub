@@ -1,8 +1,8 @@
 require 'rails_helper'
 RSpec.describe '試合ルーム関連機能', type: :system do
   before do
-    upshot5 = FactoryBot.create(:upshot5)
-    user6 = FactoryBot.create(:user6)
+    upshot6 = FactoryBot.create(:upshot6)
+    user5 = FactoryBot.create(:user5)
     # upshot2 = FactoryBot.create(:upshot2, user: user2)
     # upshot3 = FactoryBot.create(:upshot3, user: user2)
     # binding.irb
@@ -43,16 +43,27 @@ RSpec.describe '試合ルーム関連機能', type: :system do
   end
 
   it '試合ルーム編集機能' do
+    # click_on 'ログアウト'
+    # click_on 'ログイン'
+    # # visit new_user_session_path
+    # fill_in 'Eメール', with: 'test6@example.com'
+    # fill_in 'パスワード', with: 'password'
+    # click_button 'commit'
+    # binding.irb
     click_link'試合ルーム一覧へ'
     sleep(0.5)
-    page.all(".box11 a")[1].click
+    page.all(".box11 a")[0].click
+    # click_button '試合ルーム'
+    # sleep(0.5)
+    # binding.irb
+    click_on '編集'
+    # page.all(".box11 a")[1].click
     find("#game_upshot_attributes_team_a_id").find("option[value='1']").select_option
     find("#game_upshot_attributes_team_b_id").find("option[value='2']").select_option
     fill_in 'game[upshot_attributes][team_a_point]',with: ' 2 '
     fill_in 'game[upshot_attributes][team_b_point]',with: ' 3 '
     fill_in 'game[content]', with: '霧で前が見えない'
     find("#game_place").find("option[value='Tokyo']").select_option
-    # binding.irb
     fill_in 'game[match_at]', with: '002020-10-07-03:03:03'
     # sleep(0.5)
     click_button 'ルーム情報の更新'
@@ -61,11 +72,24 @@ RSpec.describe '試合ルーム関連機能', type: :system do
   end
 
   it '試合ルーム削除機能' do
-    click_link '試合ルーム一覧へ'
-    page.all(".box11 a")[2].click
+    # click_on 'ログアウト'
+    # click_on 'ログイン'
+
+    # fill_in 'Eメール', with: 'test6@example.com'
+    # fill_in 'パスワード', with: 'password'
+    # click_button 'commit'
+    # sleep(0.5)
+    click_link'試合ルーム一覧へ'
     sleep(0.5)
-    page.driver.browser.switch_to.alert.accept
+    # binding.irb
+    page.all(".box11 a")[0].click
+    # accept_alert
+    # sleep(0.5)
+    click_on '削除'
+    # page.driver.browser.switch_to.alert.accept
+    page.accept_confirm
     sleep(0.5)
+    # click_on '試合ルーム'
   end
 
   it '試合ルーム検索機能' do

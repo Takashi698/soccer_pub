@@ -11,3 +11,12 @@
   <%= link_to '試合ルーム一覧へ', games_path, class:'btn btn-primary' %> 
 
   <br><br><br><br><br>
+
+  <div class="col text-middle">
+<% if notice %>
+  <p class="alert alert-notice"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-error"><%= alert %></p>
+<% end %>
+</div>

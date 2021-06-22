@@ -25,12 +25,12 @@
   <% @team_b = Team.all.find_by(id: game.upshot.team_b_id) %>
   <%= @team_b.name %> 
   <td><%= link_to '試合ルーム', game_path(game.id) %></td><br>
-  作者: <%= link_to game.user.name, user_path(game.user_id) %> 
   </div>
+  <td><%= link_to game.user.name, user_path(game.user_id), class: 'btn btn-border mx-auto d-block' %></td>
 <% end %>
+  <br><br>
   
   <div class = 'pagination' >
       <%= paginate @games %>
   </div> 
-
   <br><br><br><br><br>
