@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   resources :relationships, only: [:create, :destroy]
   resources :favorites, only: [:create, :destroy, :show]
-  resources :teams, only: [:show]
+  resources :teams, only: [:show, :index]
   
   resources :games do
     resources :comments

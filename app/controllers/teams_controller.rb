@@ -2,6 +2,10 @@ class TeamsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_team, only: %i(show edit update destroy)
   
+  def
+    @teams = Team.all
+  end 
+
   def new
     @team = Team.new
   end

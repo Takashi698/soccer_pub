@@ -1,0 +1,7 @@
+<h3 class="text-center mt-5">チームリスト</h3>
+<br><br>
+<% @teams.each do |team|%>
+    <p><%= image_tag team.image.url if team.image.present? %></p>
+    <p>name:<%= team.name %></p>
+    <p>description:<%= team.description %></p>
+<% end %>
