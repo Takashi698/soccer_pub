@@ -13,7 +13,7 @@ class User < ApplicationRecord
   has_many :comments
   # has_many :comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
-  has_many :favorite_users, through: :favorites, source: :user
+  has_many :favorite_games, through: :favorites, source: :game
 
   has_many :active_relationships, foreign_key: 'follower_id', class_name: 'Relationship', dependent: :destroy
   has_many :passive_relationships, foreign_key: 'followed_id', class_name: 'Relationship', dependent: :destroy
@@ -23,6 +23,15 @@ class User < ApplicationRecord
   def self.guest_info
     find_or_create_by(name: 'guest_user', email: 'guest_user@example.com') do |user|
       user.password = SecureRandom.urlsafe_base64
+      user.name = 'guest_user'
+    end
+  end
+
+  def self.admin_guest
+    find_or_create_by!(email: 'admin_guest@example.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+      user.name =  'admin_guest'
+      user.admin = true
     end
   end
 

@@ -8,7 +8,16 @@
   </ul>
 <% end %>
 
-  <%= form_with(model: @game, local: true) do |f| %>
+  <div class="col text-left">
+    <% if notice %>
+      <p class="alert alert-notice"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-error"><%= alert %></p>
+    <% end %>
+  </div>
+
+  <%= form_with(model: @game, local: true, url: new_or_edit_path?) do |f| %>
     <%= f.fields_for :upshot do |u| %>
       <%= u.label :チーム1 %>
       <%= u.collection_select :team_a_id, Team.order(:name),:id,:name, {include_blank: "選択して下さい"},required: true %> 対

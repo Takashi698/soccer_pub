@@ -3,10 +3,10 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   before_action :check_guest, only: %i[update destroy]
 
-  def favorites_index
-    @user = current_user
-    @favorites = @user.favorites
-  end
+  # def favorites_index
+  #   @user = current_user
+  #   @favorites = @user.favorites
+  # end
 
   protected
   def after_update_path_for(resource)

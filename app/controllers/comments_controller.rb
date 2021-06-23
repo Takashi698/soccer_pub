@@ -6,10 +6,11 @@ class CommentsController < ApplicationController
     @comment = @game.comments.build(permitted_parameter)
     respond_to do |format|
       if @comment.save
+        flash.now[:notice] = 'コメントが作成されました'
         # format.html { redirect_to game_path(@game) }
         format.js { render :index }
       else
-        format.html { redirect_to game_path(@game), notice: '投稿できませんでした' }
+        format.html { redirect_to game_path(@game), notice: '文字が空のため、コメントできませんでした' }
       end
     end
   end
@@ -29,8 +30,8 @@ class CommentsController < ApplicationController
         flash.now[:notice] = 'コメントが編集されました'
         format.js { render :index}
       else
-        flash.now[:notice] = 'コメントの編集に失敗しました'
-        format.js {render :edit_error}
+        flash.now[:notice] = '文字が空のため、コメントの編集に失敗しました'
+        format.js { render :edit }
       end
     end
   end
