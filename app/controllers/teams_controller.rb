@@ -47,6 +47,6 @@ def set_team
 end
 
 def permitted_parameters
-  params.require(:team).permit(:name, :image, :description)
+  params.require(:team).permit(:name, :image, :image_cache, :description)
 end
 
