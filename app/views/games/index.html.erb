@@ -29,6 +29,10 @@
   <td><%= link_to game.user.name, user_path(game.user_id), class: 'btn btn-border mx-auto d-block' %></td>
 <% end %>
   <br><br>
+
+  <td><%= link_to 'チーム一覧', teams_path, class: 'btn btn-border mx-auto d-block' %></td>
+
+
   
   <div class = 'pagination' >
       <%= paginate @games %>
