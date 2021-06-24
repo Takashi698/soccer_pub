@@ -5,7 +5,7 @@ class Game < ApplicationRecord
   accepts_nested_attributes_for :upshot, allow_destroy: true
   
   has_many :comments, dependent: :destroy
-  # has_many :teams, dependent: :destroy
+  has_many :teams, dependent: :destroy
 
   validates :content, presence: true, length: {maximum: 1000}
   validates :place, presence: true 
