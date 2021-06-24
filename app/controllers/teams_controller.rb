@@ -2,7 +2,7 @@ class TeamsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_team, only: %i(show edit update destroy)
   
-  def
+  def index
     @teams = Team.all
   end 
 
@@ -11,7 +11,7 @@ class TeamsController < ApplicationController
   end
 
   def create
-    @team = current_user.teams.build(permitted_parameters)
+    @team = current_user.games.build(permitted_parameters)
     if @team.save
       redirect_to teams_path, notice: '作成しました'
     else
