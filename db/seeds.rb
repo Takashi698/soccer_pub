@@ -6,19 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Team.create! (
-  [
-    {name: 'team1'},
-    {name: 'team2'},
-    {name: 'team3'},
-    {name: 'team4'},
-    {name: 'team5'},
-    {name: 'team6'},
-    {name: 'team7'},
-    {name: 'team8'},
-    {name: 'team9'},
-  ]
-)
 
 # User
 
@@ -57,6 +44,39 @@ user5 = User.create!(
   password: "password",
   password_confirmation: "password",
   image: File.open("./app/assets/images/icon_images/icon1.jpg"),
+)
+
+# Team
+
+team1 = Team.create!(
+  name: "Team1",
+  image: File.open("./app/assets/images/icon_images/icon1.jpg"),
+  description: "地球最強",
+  user_id: user1.id,
+)
+team2 = Team.create!(
+  name: "Team2",
+  image: File.open("./app/assets/images/icon_images/icon1.jpg"),
+  description: "ヨーロッパ最強",
+  user_id: user1.id,
+)
+team3 = Team.create!(
+  name: "Team3",
+  image: File.open("./app/assets/images/icon_images/icon1.jpg"),
+  description: "アジア最強",
+  user_id: user1.id,
+)
+team4 = Team.create!(
+  name: "Team4",
+  image: File.open("./app/assets/images/icon_images/icon1.jpg"),
+  description: "アフリカ最強",
+  user_id: user1.id,
+)
+team5 = Team.create!(
+  name: "Team5",
+  image: File.open("./app/assets/images/icon_images/icon1.jpg"),
+  description: "宇宙最強",
+  user_id: user1.id,
 )
 
 
