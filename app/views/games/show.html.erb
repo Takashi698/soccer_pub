@@ -1,12 +1,12 @@
 <div class = "content_index post_show">
-<h3 class="text-center mt-5"><%= link_to @game.user.name, user_path(@game.user_id) %>の試合ルーム</h3><br>
+<h3 class="text-center mt-5"><span class="user_name"><%= link_to @game.user.name, user_path(@game.user_id) %></span>の試合ルーム</h3><br>
 
   <div class = "alert alert-light">
-    <p><%= @team_a.name %> 対 <%= @team_b.name %></p>  
-    <p><%= @game.upshot.team_a_point %> 対 <%= @game.upshot.team_b_point %></p> 
-    <p> 場所 : <%= @game.place %></p>
-    <p> 日時 : <%= @game.match_at %></p>
-    <p> 試合内容 : <%= @game.content %></p>
+    <p><span class="team_info"><%= @team_a.name %> 対 <%= @team_b.name %></span></p>
+    <p><span class="team_point"><%= @game.upshot.team_a_point %> - <%= @game.upshot.team_b_point %></span></p> 
+    <p><span class="team_place"> 場所 : <%= @game.place %></span></p>
+    <p><span class="team_match"> 日時 : <%= @game.match_at %></span></p>
+    <p><span class="team_content"> 試合内容 : <%= @game.content %></span></p>
   </div>
 
   <% if current_user == @game.user %>
@@ -33,8 +33,8 @@
   </div>
     
     
-    <%= link_to '試合ルーム一覧', games_path, class: 'btn btn-primary btn-sm' %>
-    <%= link_to 'お気に入り一覧', favorite_path(current_user.id), class: 'btn btn-primary btn-sm' %>
+    <%= link_to '試合ルーム一覧', games_path, class: 'btn btn-primary btn-block' %>
+    <%= link_to 'お気に入り一覧', favorite_path(current_user.id), class: 'btn btn-primary btn-block' %>
     <br><br><br><br><br><br><br><br>
 
   </div>

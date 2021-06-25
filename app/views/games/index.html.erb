@@ -19,21 +19,23 @@
 <% end %>
 
 <% @games.each do |game|%>
-  <div class = "box11" > 
-  <% @team_a = Team.all.find_by(id: game.upshot.team_a_id) %>
-  <%= @team_a.name %> 対
-  <% @team_b = Team.all.find_by(id: game.upshot.team_b_id) %>
-  <%= @team_b.name %> 
-  <td><%= link_to '試合ルーム', game_path(game.id) %></td><br>
+  <div class = "box11" >
+    <div class="team_name">
+      <% @team_a = Team.all.find_by(id: game.upshot.team_a_id) %>
+      <span class="team1"><%= @team_a.name %></span> 対
+      <% @team_b = Team.all.find_by(id: game.upshot.team_b_id) %>
+      <span class="team2"><%= @team_b.name %></span>
+    </div>
+    <%= link_to game.user.name, user_path(game.user_id), class: 'btn btn-success' %>
+    <%= link_to '試合ルーム', game_path(game.id), class: 'btn btn-primary' %>
   </div>
-  <td><%= link_to game.user.name, user_path(game.user_id), class: 'btn btn-border mx-auto d-block' %></td>
 <% end %>
   <br><br>
 
-  <td><%= link_to 'チームの新規作成', new_team_path, class:'btn-border-bottom' %> <td>
-  <td><%= link_to 'チーム一覧', teams_path, class: 'btn btn-border mx-auto d-block' %> <td>
-
-
+  <% if current_user.try(:admin?) %>
+    <td><%= link_to 'チームの新規作成', new_team_path, class:'btn-border-bottom' %> <td>
+    <td><%= link_to 'チーム一覧', teams_path, class: 'btn btn-border mx-auto d-block' %> <td>
+  <% end %>
   
   <div class = 'pagination' >
       <%= paginate @games %>

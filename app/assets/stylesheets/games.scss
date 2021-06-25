@@ -102,8 +102,28 @@ a {
   text-align: center;
 }
 
-// div p {
+.post_show h3 .user_name a {
+  color: blue;
+  font-size: 1.5rem;
+}
 
-//   display: inline-block;
+.box11 .team_name { 
+  color: black;
+  font-size: 1.5rem;
+}
 
-// }
+.alert-light .team_info {
+  color: black;
+}
+.alert-light .team_point {
+  color: black;
+}
+.alert-light .team_place {
+  color: black;
+}
+.alert-light .team_match {
+  color: black;
+}
+.alert-light .team_content {
+  color: black;
+}
