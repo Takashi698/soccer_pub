@@ -68,7 +68,6 @@ a {
 .search_box {
   text-align:center;
   margin-bottom: 20px;
-  
 }
 
 
@@ -93,7 +92,7 @@ a {
 }
 
 .like-btn-unlike {
-  color: #ff2581;
+  color: #d38eab;
   width: 50px;
   height: auto;
 }
@@ -102,28 +101,113 @@ a {
   text-align: center;
 }
 
-.post_show h3 .user_name a {
+.post_show h2 .user_name a {
   color: blue;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
-.box11 .team_name { 
+.box11 .team_image { 
   color: black;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
+  border-bottom: blue;
 }
 
-.alert-light .team_info {
+.box11 .team_index { 
   color: black;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
 }
-.alert-light .team_point {
+
+.box11 .team_info {
   color: black;
+  font-size: 1.3rem;
+  border-bottom: 5px solid #000;
+  display: inline-block;
+  padding-bottom: 5px;
 }
-.alert-light .team_place {
+.box11 .team_point {
   color: black;
+  font-size: 1.3rem;
+  border-bottom: 5px solid #000;
+  display: inline-block;
+  padding-bottom: 5px;
 }
-.alert-light .team_match {
+.box11 .team_place {
   color: black;
+  font-size: 1.3rem;
+  border-bottom: 5px solid #000;
+  display: inline-block;
+  padding-bottom: 5px;
 }
-.alert-light .team_content {
+.box11 .team_match {
   color: black;
+  font-size: 1.3rem;
+  border-bottom: 5px solid #000;
+  display: inline-block;
+  padding-bottom: 5px;
 }
+
+.box11 .team_content_name {
+  color: black;
+  font-size: 1.3rem;
+}
+
+.box11 .team_content {
+  color: black;
+  font-size: 1.3rem;
+  border-bottom: 5px solid #000;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.post_show .box11 p {
+  margin-bottom: 10px;
+}
+
+.comments {
+  display: inline-block;
+  position: relative; 
+  margin: 5px 0 0 105px;
+  padding: 17px 13px;
+  width: 666;
+  border-radius: 12px;
+  background: #d7ebfe;
+}
+
+.comments_user {
+  // display: inline-block;
+  position: relative;
+  margin-right: 83%;
+  top: -66px;
+}
+
+.comments:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 5px; 
+  left: -24px;
+  border: 12px solid transparent;
+  border-right: 15px solid #d7ebfe;
+}
+
+.edit_delete {
+  margin-left: -77%;
+  margin-bottom: 10px;
+}
+
+
+// .center_box p {
+//   font-size: 1.6rem;
+// }
+
+// #comment_image {
+//   padding-left: 30px;
+// }
+
+// .buttons {
+//   display: inline-block;
+//   text-align: left;
+//   padding-left: 180px;
+// }
+

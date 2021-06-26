@@ -217,8 +217,9 @@ h1:after {
     margin: 2em 0;
     color: #5d627b;
     background: white;
-    border-top: solid 5px #535454;
+    border: solid 5px #535454;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+    border-radius: 10px;
 }
 .box11 p {
     margin: 0; 
@@ -258,6 +259,9 @@ h1:after {
 //ページネーション
 .pagination {
   justify-content: center;
+  color: black;
+  font-size: 1.3rem;
+  margin: 0
 }
 
 //nav_menu
@@ -367,8 +371,16 @@ body
   z-index: 0
 }
 
+.header li {
+  padding: 0 10px;
+  width: auto;
+}
+
 img {
   width: 300px;
+}
+.main_container {
+  margin: 0 auto;
 }
 
 // .row {

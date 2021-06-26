@@ -1,14 +1,20 @@
 <br><br>
-<h3>マイページ</h3>
+<h3>マイページ</h3><br>
 <p><%= image_tag @user.image.url, class: 'rounded-circle' if @user.image.present? %></p>
-<p>name:<%= @user.name %></p>
-<p>email:<%= @user.email %></p>
+<p><%= @user.name %></p>
+<p><%= @user.email %></p>
 
-  <%= render 'stats', user: @user %>
+  <%= render 'stats', user: @user %><br>
   <%= render 'follow_form', user: @user unless current_user == @user %>
   <%= link_to 'マイページ編集', edit_user_registration_path, class:'btn btn-success' %>
-  <%= link_to 'お気に入り一覧', favorite_path(current_user.id), class:'btn btn-success' %>
-  <%= link_to '試合ルーム一覧へ', games_path, class:'btn btn-primary' %> 
+  <% if current_user.try(:admin?) %>
+    <%= link_to 'チームの新規作成', new_team_path, class:'btn btn-primary' %> <td>
+  <% end %>
+  <%= link_to '試合ルーム一覧へ', games_path, class:'btn btn-success' %>
+  <%= link_to 'お気に入り一覧', favorite_path(current_user.id), class:'btn btn-primary' %>
+
+  
+
 
   <br><br><br><br><br>
 
@@ -19,4 +25,4 @@
 <% if alert %>
   <p class="alert alert-error"><%= alert %></p>
 <% end %>
-</div>
+  </div>

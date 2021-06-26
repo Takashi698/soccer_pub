@@ -1,12 +1,13 @@
 <div class = "content_index post_show">
-<h3 class="text-center mt-5"><span class="user_name"><%= link_to @game.user.name, user_path(@game.user_id) %></span>の試合ルーム</h3><br>
+<h2 class="text-center mt-5"><span class="user_name"><%= link_to @game.user.name, user_path(@game.user_id) %></span>の試合ルーム</h3>
 
-  <div class = "alert alert-light">
-    <p><span class="team_info"><%= @team_a.name %> 対 <%= @team_b.name %></span></p>
-    <p><span class="team_point"><%= @game.upshot.team_a_point %> - <%= @game.upshot.team_b_point %></span></p> 
-    <p><span class="team_place"> 場所 : <%= @game.place %></span></p>
-    <p><span class="team_match"> 日時 : <%= @game.match_at %></span></p>
-    <p><span class="team_content"> 試合内容 : <%= @game.content %></span></p>
+  <div class = "box11" >
+    <p><span class="team_info"><%= image_tag @team_a.image.url %><%= @team_a.name %> 対 <%= @team_b.name %><%= image_tag @team_b.image.url %></span></p>
+    <p><span class="team_point"><%= @game.upshot.team_a_point %> 対 <%= @game.upshot.team_b_point%></span></p> 
+    <p><span class="team_place"> <%= @game.place %></span></p>
+    <p><span class="team_match"><%= @game.match_at %></span></p>
+    <p><span class="team_content_name">試合内容 👇</span></p>
+    <p><span class="team_content"><%= @game.content %></span></p>
   </div>
 
   <% if current_user == @game.user %>
@@ -15,11 +16,11 @@
   <% end %>
 
   <div class = "center_box">
-  <% if @game.user_id != current_user.id %>
-    <% if @favorite.present? %>
-      <%= link_to '❤', favorite_path(id: @favorite.id), method: :delete, class: "btn-circle-border-double" %>
-    <% else %>
-      <%= link_to '♡', favorites_path(game_id: @game.id), method: :post, class: "btn-circle-border-double" %>
+    <% if @game.user_id != current_user.id %>
+      <% if @favorite.present? %>
+        <%= link_to '❤', favorite_path(id: @favorite.id), method: :delete, class: "btn-circle-border-double" %>
+      <% else %>
+        <%= link_to '♡', favorites_path(game_id: @game.id), method: :post, class: "btn-circle-border-double" %>
     <% end %>
   <% end %>
   
