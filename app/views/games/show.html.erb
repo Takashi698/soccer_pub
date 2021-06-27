@@ -1,13 +1,13 @@
 <div class = "content_index post_show">
-<h2 class="text-center mt-5"><span class="user_name"><%= link_to @game.user.name, user_path(@game.user_id) %></span>の試合ルーム</h3>
-
   <div class = "box11" >
-    <p><span class="team_info"><%= image_tag @team_a.image.url %><%= @team_a.name %> 対 <%= @team_b.name %><%= image_tag @team_b.image.url %></span></p>
-    <p><span class="team_point"><%= @game.upshot.team_a_point %> 対 <%= @game.upshot.team_b_point%></span></p> 
-    <p><span class="team_place"> <%= @game.place %></span></p>
-    <p><span class="team_match"><%= @game.match_at %></span></p>
-    <p><span class="team_content_name">試合内容 👇</span></p>
-    <p><span class="team_content"><%= @game.content %></span></p>
+    <h2 class="text-center mt-5"><span class="user_name"><%= link_to @game.user.name, user_path(@game.user_id) %></span>の試合ルーム</h3>
+
+      <p><span class="team_info"><%= image_tag @team_a.image.url %><%= @team_a.name %> 対 <%= @team_b.name %><%= image_tag @team_b.image.url %></span></p>
+      <p><span class="team_point"><%= @game.upshot.team_a_point %> 対 <%= @game.upshot.team_b_point%></span></p> 
+      <p><span class="team_place"> <%= @game.place %></span></p>
+      <p><span class="team_match"><%= @game.match_at %></span></p>
+      <p><span class="team_content_name">試合内容 👇</span></p>
+      <p><span class="team_content"><%= @game.content %></span></p>
   </div>
 
   <% if current_user == @game.user %>
@@ -26,7 +26,6 @@
   
   <div class="container">
   <p id="notice"><%= notice %></p>
-    </div>
     <div id="comments_area">
     <%= render partial: 'comments/index', locals: { comments: @comments, post: @game } %>
     </div>
