@@ -11,7 +11,7 @@ class TeamsController < ApplicationController
   end
 
   def create
-    @team = current_user.games.build(permitted_parameters)
+    @team = current_user.teams.build(permitted_parameters)
     if @team.save
       redirect_to teams_path, notice: '作成しました'
     else
@@ -23,30 +23,30 @@ class TeamsController < ApplicationController
   def show
     @team = Team.find(params[:id])
   end
-end
 
-def edit
-end
-
-def update
-  if @team.update(permitted_parameters)
-    redirect_to teams_path, notice: '編集しました'
-  else
-    render :new
+  def edit
   end
-end
 
-def destroy
-  @team.destroy
-  redirect_to teams_path, notice: '削除しました'
-end
+  def update
+    if @team.update(permitted_parameters)
+      redirect_to teams_path, notice: '編集しました'
+    else
+      render :new
+    end
+  end
 
-private
-def set_team
-  @team = Team.find(params[:id])
-end
+  def destroy
+    @team.destroy
+    redirect_to teams_path, notice: '削除しました'
+  end
 
-def permitted_parameters
-  params.require(:team).permit(:name, :image, :image_cache, :description)
+  private
+  def set_team
+    @team = Team.find(params[:id])
+  end
+
+  def permitted_parameters
+    params.require(:team).permit(:name, :image, :image_cache, :description)
+  end
 end
 

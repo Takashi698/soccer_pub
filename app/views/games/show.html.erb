@@ -25,12 +25,12 @@
   <% end %>
   
   <div class="container">
-  <p id="notice"><%= notice %></p>
+    <p id="notice"><%= notice %></p>
     <div id="comments_area">
     <%= render partial: 'comments/index', locals: { comments: @comments, post: @game } %>
     </div>
     <%= render partial: 'comments/form', locals: { comment: @comment, post: @game } %>
-  </div>
+ </div>
     
     
     <%= link_to '試合ルーム一覧', games_path, class: 'btn btn-primary btn-block' %>

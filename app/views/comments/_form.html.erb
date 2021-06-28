@@ -9,10 +9,12 @@
       </ul>
     </div>
   <% end %>
-    <div class="field">
-      <%= form.label :content %><br>
-      <%= form.text_area :content %>
-    </div>
+  <div class="buttons">
+  <div class="field">
+    <%= form.label :content %><br>
+    <%= form.text_area :content %>
+  </div>
+  
     <div class="field">
       <%= form.label :image %><br>
       <%= form.file_field :image %>
@@ -21,4 +23,5 @@
     <div class="actions">
       <%= form.submit %>
     </div>
+  </div>
 <% end %> 

@@ -1,7 +1,17 @@
+<% if @team.errors.any? %>
+  <ul>
+    <% @team.errors.full_messages.each do |msg| %>
+    <li>
+      <%= msg %>
+    </li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= form_with(model: @team, local: true) do |f| %>
   <div class = "field">
     <%= f.label :チーム名%><br>
-    <%= f.text_field :name%>
+    <%= f.text_field :name, class: 'form-control'%>
   </div>
   <div class = "field">
     <%= f.label :画像%><br>
@@ -10,9 +20,17 @@
   </div>
   <div class = "field">
   <%= f.label :説明%><br>
-  <%= f.text_area :description%>
+  <%= f.text_area :description,  class: 'form-control'%>
 </div>
-  <div>
-    <%= f.submit %>
-  </div>
+
+<br>
+
+<div class="form-group">
+<% if action_name == 'new' || action_name == 'create' %>
+  <%= f.submit 'チーム作成', class: 'btn-denim mx-auto d-block' %>
+<% else %>
+  <%= f.submit 'チーム情報の更新・編集' %>
+<% end %>
+</div>
+
 <% end %>
