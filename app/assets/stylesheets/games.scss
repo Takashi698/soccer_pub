@@ -121,30 +121,30 @@ a {
 .box11 .team_info {
   color: black;
   font-size: 1.3rem;
-  border-bottom: 5px solid #000;
-  display: inline-block;
-  padding-bottom: 5px;
+  border-bottom: 3px solid #000;
+  // display: inline-block;
+  // padding-bottom: 5px;
 }
 .box11 .team_point {
   color: black;
   font-size: 1.3rem;
-  border-bottom: 5px solid #000;
-  display: inline-block;
-  padding-bottom: 5px;
+  border-bottom: 3px solid #000;
+  // display: inline-block;
+  // padding-bottom: 5px;
 }
 .box11 .team_place {
   color: black;
   font-size: 1.3rem;
-  border-bottom: 5px solid #000;
-  display: inline-block;
-  padding-bottom: 5px;
+  border-bottom: 3px solid #000;
+  // display: inline-block;
+  // padding-bottom: 5px;
 }
 .box11 .team_match {
   color: black;
   font-size: 1.3rem;
-  border-bottom: 5px solid #000;
-  display: inline-block;
-  padding-bottom: 5px;
+  border-bottom: 3px solid #000;
+  // display: inline-block;
+  // padding-bottom: 5px;
 }
 
 .box11 .team_content_name {
@@ -153,11 +153,17 @@ a {
 }
 
 .box11 .team_content {
+  display: block;
+  padding: 20px 10px;
+  text-align: left;
   color: black;
   font-size: 1.3rem;
-  border-bottom: 5px solid #000;
-  display: inline-block;
-  padding-bottom: 5px;
+  background-color: whitesmoke;
+  // border-bottom: 3px solid #000;
+  word-wrap: break-word;
+
+  // display: inline-block;
+  // padding-bottom: 5px;
 }
 
 .post_show .box11 p {

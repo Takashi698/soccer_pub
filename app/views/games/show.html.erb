@@ -5,7 +5,7 @@
       <p><span class="team_info"><%= image_tag @team_a.image.url %><%= @team_a.name %> 対 <%= @team_b.name %><%= image_tag @team_b.image.url %></span></p>
       <p><span class="team_point"><%= @game.upshot.team_a_point %> 対 <%= @game.upshot.team_b_point%></span></p> 
       <p><span class="team_place"> <%= @game.place %></span></p>
-      <p><span class="team_match"><%= @game.match_at %></span></p>
+      <p><span class="team_match"><%= @game.match_at.strftime("%Y-%m-%d %H:%M") %></span></p>
       <p><span class="team_content_name">試合内容 👇</span></p>
       <p><span class="team_content"><%= @game.content %></span></p>
   </div>
