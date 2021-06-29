@@ -2,7 +2,7 @@
 <p><%= image_tag @team.image.url if @team.image.present? %></p>
 <p><%= @team.name %></p>
 
-<p>description:<%= @team.description %></p>
+<p><チーム説明>👉<%= @team.description %></p>
 
 <%= link_to 'チーム編集', edit_team_path, class:'btn btn-success' %>
 <%= link_to 'チーム一覧', teams_path, class:'btn btn-primary' %>
