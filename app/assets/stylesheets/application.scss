@@ -23,7 +23,7 @@
   margin: 0;
   width: 100vw;
   height: 100vh;
-  // background-image: url("shibafu.jpg");
+  // background-image: url("goalnet.jpg");
 //   background-image: 
 //     linear-gradient(140deg, 
 //       #00f3ffA0, 
@@ -217,8 +217,9 @@ h1:after {
     margin: 2em 0;
     color: #5d627b;
     background: white;
-    border-top: solid 5px #535454;
+    border: solid 5px #535454;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+    border-radius: 10px;
 }
 .box11 p {
     margin: 0; 
@@ -258,6 +259,9 @@ h1:after {
 //ページネーション
 .pagination {
   justify-content: center;
+  color: black;
+  font-size: 1.3rem;
+  margin: 0
 }
 
 //nav_menu
@@ -282,7 +286,7 @@ body
 .menu {
 
   font-weight: 100;
-  background: rgb(68, 64, 64); //#efefef  #535454
+  background: rgb(240, 233, 233); //#efefef  #535454
   width: 200px;
   height: 100%;
   padding-left: 85px;
@@ -367,8 +371,16 @@ body
   z-index: 0
 }
 
+.header li {
+  padding: 0 10px;
+  width: auto;
+}
+
 img {
   width: 300px;
+}
+.main_container {
+  margin: 0 auto;
 }
 
 // .row {

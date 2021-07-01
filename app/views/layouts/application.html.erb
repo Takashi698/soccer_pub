@@ -20,6 +20,7 @@
         <% if user_signed_in? %>
           <li><%= link_to 'マイページ', user_path(current_user.id) %></li>
           <li><%= link_to '試合ルーム一覧', games_path %></li>
+          <li><%= link_to 'チーム一覧', teams_path %></li>
         <% end %>
       </ul>
     </div>
@@ -27,12 +28,8 @@
       <div class="col text-center" >
         <div class="container">
           <div class="row">
-            <div class="col-md-1 col-sm-1 col-xs-0">
-            </div>
-            <div class="col-md-9 col-sm-9 col-xs-12">
+            <div class="main_container col-md-9 col-sm-9 col-xs-12">
               <%= yield %>
-              </div>
-              <div class="col-md-1 col-sm-1 col-xs-0">
             </div>
           </div>
         </div>

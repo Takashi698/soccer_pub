@@ -19,18 +19,22 @@
 <% end %>
 
 <% @games.each do |game|%>
-  <div class = "box11" > 
-  <% @team_a = Team.all.find_by(id: game.upshot.team_a_id) %>
-  <%= @team_a.name %> 対
-  <% @team_b = Team.all.find_by(id: game.upshot.team_b_id) %>
-  <%= @team_b.name %> 
-  <td><%= link_to '試合ルーム', game_path(game.id) %></td><br>
+  <div class = "box11" >
+    <div class="team_index">
+      <% @team_a = Team.all.find_by(id: game.upshot.team_a_id) %>
+      <span class="team1"><%= @team_a.name %></span> 対
+      <% @team_b = Team.all.find_by(id: game.upshot.team_b_id) %>
+      <span class="team2"><%= @team_b.name %></span>
+      <p><span class="team_match"><%= game.match_at.strftime("%Y-%m-%d %H:%M") %></span></p>
+    </div>
+    <%= link_to game.user.name, user_path(game.user_id), class: 'btn btn-success' %>
+    <%= link_to '試合ルーム', game_path(game.id), class: 'btn btn-primary' %>
   </div>
-  <td><%= link_to game.user.name, user_path(game.user_id), class: 'btn btn-border mx-auto d-block' %></td>
 <% end %>
-  <br><br>
-  
+<br><br>
+
   <div class = 'pagination' >
       <%= paginate @games %>
   </div> 
+  
   <br><br><br><br><br>

@@ -1,0 +1,13 @@
+<h3 class="text-center mt-5">チーム一覧</h3>
+<br><br>
+
+  <% @teams.each do |team|%>
+    <div class = "box11" >
+      <div class="team_index">
+        <p><%= image_tag team.image.url if team.image.present? %></p>
+        <p><span class="team_name_index"><%= team.name %></span></p>
+        <td><%= link_to 'チーム情報', team_path(team.id), class:'btn btn-primary' %></td><br>
+      </div>
+    </div>
+  <% end %>
+<br><br><br><br>

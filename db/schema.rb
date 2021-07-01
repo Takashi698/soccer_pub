@@ -57,8 +57,10 @@ ActiveRecord::Schema.define(version: 2021_06_08_091922) do
     t.string "name"
     t.string "image"
     t.string "description"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_teams_on_user_id"
   end
 
   create_table "upshots", force: :cascade do |t|
@@ -97,6 +99,7 @@ ActiveRecord::Schema.define(version: 2021_06_08_091922) do
   add_foreign_key "comments", "games"
   add_foreign_key "comments", "users"
   add_foreign_key "games", "users"
+  add_foreign_key "teams", "users"
   add_foreign_key "upshots", "games"
   add_foreign_key "upshots", "teams"
 end
